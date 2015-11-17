@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<!-- add php to link the database -->
+	 <?php
+    include 'connectdb.php';
+    ?>
 	<header>
 		<h2> Welcome to Jieni and Jaisen's Movie Screening Management System </h2>
 	</header>
