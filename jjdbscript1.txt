@@ -1,0 +1,10 @@
+drop database if exists jjdb;
+create database jjdb;
+use database jjdb;
+show tables;
+create table customer(custID int(3), name varchar(100) not null, email varchar(50), sex char(1), unique(custID), primary key(custID));
+create table movie(movieID int(3), moviename varchar(50) not null, year int(4), unique(movieID), primary key(movieID));
+create table theatre(roomnum int, capacity int(4), unique(roomnum), primary key(roomnum));
+create table showing(movieID int(3), showID int(3), show_date date, show_time time, roomnum int, primary key(showID), foreign key(movieID) references movie(movieID), foreign key(roomnum) references theatre(roomnum));
+create table selected(rate int(1), payment double(4,2), custID int(3), showID int(3), foreign key(custID) references customer(custID), foreign key(showID) references showing(showID));
+create table genre(genre varchar(40), movieID int(3), foreign key(movieID) references movie(movieID), primary key(genre,movieID));
