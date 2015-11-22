@@ -1,0 +1,28 @@
+/* CS3319 Jieni Hou */
+
+/* Main Styles */
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-align:center;
+}
+
+header,footer{
+	text-align: center;
+	font-family: 'Shadows Into Light Two', cursive;
+}
+
+/* index.php */
+
+#gallery{
+	text-align: center;
+}
+
+#gallery ul{
+	list-style: none;
+	position: relative;
+}
+
+#gallery li{
+	display: inline-block;
+	padding: 10px;
+}

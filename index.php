@@ -9,9 +9,12 @@
 <head>
 	<title> Screenings Login</title>
 	<meta charset="utf-8">
-</head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
 <body>
+	<header>
 	<h1> Welcome to Jieni and Jaisen's Screening Company </h1>
+    </header>
 	<p> Choose your login below: </p> 
 	<!-- Add customer.php , and check how to read the customer's name-->
 	<form action="customer.php" method="post">
@@ -22,9 +25,20 @@
 	<form action="staff.php" method="post">
 		<input type="submit" value="Staff">
 	</form>
-	<?php
-		mysqli_close($connection);
-	?>
+
+	<hr>
+	<br>
+	<h2> Now Showing: </h2>
+	<div id="gallery">
+		<ul>
+			<li> <img src="https://s-media-cache-ak0.pinimg.com/236x/90/bc/ea/90bceaf32997194a90febf0b5345a15c.jpg"></li>
+			<li> <img src="http://images.wookmark.com/100251_thor_ver5_xxlg.jpg" width="236" height="349"></li>
+			<li> <img src="http://a.dilcdn.com/bl/wp-content/uploads/sites/2/2014/01/finding-nemo-poster.jpg" width="236" height="349"></li>
+		</ul>
+	</div>
+	<footer>
+		&copy; Jieni and Jaisen
+	</footer>
 </body>
 </html>
 
