@@ -1,10 +1,10 @@
 <?php
-$query = "select fname,lname from customer";
+$query = "select name from customer";
 $result = mysqli_query($connection,$query);
 if (!$result) {
     die("Failed to retreive customer.");
 }
-echo "<select name="customers">"
+echo "<select>";
 echo "<option>"."Select Option"."</option>";
 while ($row = mysqli_fetch_assoc($result)) {
      echo "<option>";

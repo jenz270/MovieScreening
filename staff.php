@@ -22,7 +22,7 @@
         ?>
         <p>Showing:</p>
         <?php
-        include 'getshowing.php'
+        include 'getshowing.php';
         ?>
 
         <form action="sellticket.php">
