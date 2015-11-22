@@ -4,12 +4,9 @@ $result = mysqli_query($connection,$query);
 if (!$result) {
     die("Failed to retreive customer.");
 }
-echo "<select>";
-echo "<option>"."Select Option"."</option>";
+
 while ($row = mysqli_fetch_assoc($result)) {
-     echo "<option>";
-     echo $row["name"]."</option>";
+     echo $row["genre"]. " ". $row["name"]."</option>";
 }
 mysqli_free_result($result);
-echo "</select>";
 ?>

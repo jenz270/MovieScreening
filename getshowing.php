@@ -2,7 +2,7 @@
 $query = "select moviename,show_date,show_time from movie join showing where movie.movieID = showing.movieID";
 $result = mysqli_query($connection,$query);
 if (!$result) {
-    die("Failed to retreive customer.");
+    die("Failed to retreive showing.");
 }
 echo "<select>";
 echo "<option>". "Select Option"."</option>";

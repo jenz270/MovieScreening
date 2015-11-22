@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,12 +33,16 @@
         <!-- display using drop down box, format information to be displayed within a constrained box -->
         <!-- total ticket sales for genre -->
         <!-- total number of movies within the genre -->
-        <p> Genre: </p> 
-        <form action= "getGenre.php" method="post">
-                <!-- genretotal.php-->
-        </form>
+        <h2> Total Sales: </h2>
+        <?php
+         include 'getgenre.php'
+        ?>
         <br>
-        
+
+        <h2> Movie Count by Genre: </h2>
+        <?php
+         include 'getnum.php'
+        ?>
         <!-- you can just get the rating information through whichever table it is that contains the information -->
         <p> Ratings: </p> 
         <p> All movies with average rating of 4 or more stars </p>
