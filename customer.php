@@ -16,7 +16,7 @@
 	<!-- Look at how to display the user's usernsme or name here -->
 	<p> Welcome back, </p>
 	<!-- Try and view profile by redirecting to profile.php? -->
-	<p> View Profile </p>  
+	<p><a href="profile.php"> View Profile </a></p>  
 
 	<!-- Look at how to display the user's recently watched movie-->
 	<p> This is the current showing that you had just seen: </p>

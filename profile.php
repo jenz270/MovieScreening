@@ -5,12 +5,15 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<!-- add php to link the database -->
+	<?php
+    include 'connectdb.php';
+    ?>
+    
 	<header>
 		<h2> Welcome to Jieni and Jaisen's Movie Screening Management System </h2>
 	</header>
 
-	<nr>
+	<br>
 	<!-- Look at how to display the user's usernsme or name here -->
 	<p> Welcome back, </p>
 	<!-- Attempt to show the profile of the customer through php file to get the information of customer-->
@@ -26,4 +29,4 @@
 		mysqli_close($connection);
 	?>
 </body>
-</head>
+</html>

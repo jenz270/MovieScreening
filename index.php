@@ -22,6 +22,9 @@
 	<form action="staff.php" method="post">
 		<input type="submit" value="Staff">
 	</form>
+	<?php
+		mysqli_close($connection);
+	?>
 </body>
 </html>
 
