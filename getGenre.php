@@ -6,7 +6,7 @@
   -->
 
 <?php
-    $query = "select * from COURSE";
+    $query = "select * from genre";
     $result = mysqli_query($connection,$query);
     if(!result){
         die("databases query failed.");
