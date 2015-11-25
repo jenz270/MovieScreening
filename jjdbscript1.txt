@@ -1,6 +1,6 @@
 drop database if exists jjdb;
 create database jjdb;
-use database jjdb;
+use jjdb;
 show tables;
 create table customer(custID int(3), name varchar(100) not null, email varchar(50), sex char(1), unique(custID), primary key(custID));
 create table movie(movieID int(3), moviename varchar(50) not null, year int(4), unique(movieID), primary key(movieID));
