@@ -23,7 +23,7 @@
         ?>
         <p>Showing:</p>
         <?php
-        include 'getshowing.php';
+        include 'getShowing.php';
         ?>
 
         <form action="sellticket.php">
@@ -37,18 +37,18 @@
         <!-- total number of movies within the genre -->
         <h2> Total Sales: </h2>
         <?php
-         include 'getgenre.php'
+         include 'getGenre.php'
         ?>
         <br>
 
         <h2> Movie Count by Genre: </h2>
         <?php
-         include 'getnum.php'
+         include 'getNum.php'
         ?>
         <!-- you can just get the rating information through whichever table it is that contains the information -->
         <p> Ratings: </p> 
         <p> All movies with average rating of 4 or more stars </p>
-        <form action= "getwhateverratingsiswithin.php" method="post">
+        <form action= "getRatings.php" method="post">
         </form>
         <br>
         <footer>

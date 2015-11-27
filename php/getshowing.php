@@ -8,7 +8,7 @@ echo "<select>";
 echo "<option>". "Select Option"."</option>";
 while ($row = mysqli_fetch_assoc($result)) {
      echo "<option>";
-     echo $row["moviename"].$row["show_date"].$row["show_time"]."</option>";
+     echo $row["moviename"]." ".$row["show_date"]." ".$row["show_time"]."</option>";
 }
 mysqli_free_result($result);
 echo "</select>";

@@ -7,7 +7,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "cs3319";
-$dbname = "jenjai";
+$dbname = "jjdb";
 
 $connection = @mysqli_connect($dbhost,$dbuser,$dbpass,$dbname)
 OR die("database connection failed :" .

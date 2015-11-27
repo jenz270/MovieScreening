@@ -1,6 +1,6 @@
 <!-- 
 	CS3319 Assignment 3 
-	Jieni Hou
+	Jieni Hou Jaisen Bynoe
 	index.php is the file that logs the login towards the management system
 -->
 
@@ -9,20 +9,18 @@
 <head>
 	<title> Screenings Login</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
 <body>
 	<header>
 	<h1> Welcome to Jieni and Jaisen's Screening Company </h1>
     </header>
 	<p> Choose your login below: </p> 
-	<!-- Add customer.php , and check how to read the customer's name-->
-	<form action="customer.php" method="post">
+	<form action="php/customer.php" method="post">
 		<input type="submit" value="Customer">
 	</form>
 	<br>
-		<!-- Add staff.php -->
-	<form action="staff.php" method="post">
+	<form action="php/staff.php" method="post">
 		<input type="submit" value="Staff">
 	</form>
 
