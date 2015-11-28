@@ -11,7 +11,7 @@
     include 'connectdb.php';
     ?>
         <header>
-                <h2> Welcome to Jieni and Jaisen's Movie Screening Management System </h2>
+                <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
 
         <br>
