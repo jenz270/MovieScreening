@@ -6,8 +6,14 @@ if (!$result) {
 }
 echo "<select>";
 while ($row = mysqli_fetch_assoc($result)) {
-     echo "<option>".$row["genre"]. " ". $row["name"]."</option>";
+     echo "<option>".$row["name"]."</option>";
 }
 echo "</select>";
+
+$result= $database->query($query);
+while($country = $database->fetch_array($result_set)) {
+    if ($country["code"] == "AU"){
+        echo "<option value=\"{$country['code']}\" selected=\"selected\">{$country['name']}</option>";
+}
 mysqli_free_result($result);
 ?>
