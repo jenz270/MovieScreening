@@ -37,19 +37,19 @@
         <!-- total number of movies within the genre -->
         <h2> Total Sales: </h2>
         <?php
-         include 'getGenre.php'
+         include 'getGenre.php';
         ?>
         <br>
 
         <h2> Movie Count by Genre: </h2>
         <?php
-         include 'getNum.php'
+         include 'getNum.php';
         ?>
         <!-- you can just get the rating information through whichever table it is that contains the information -->
         <p> Ratings: </p> 
         <p> All movies with average rating of 4 or more stars </p>
         <?php
-          include 'getRatings.php'
+          include 'getRatings.php';
         ?>
         <br>
         <footer>

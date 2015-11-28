@@ -6,7 +6,7 @@ if (!$result) {
 }
 
 while ($row = mysqli_fetch_assoc($result)) {
-     echo $row["moviename"];
+     echo $row["moviename"]."</br>";
 }
 mysqli_free_result($result);
 ?>
