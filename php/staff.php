@@ -48,8 +48,9 @@
         <!-- you can just get the rating information through whichever table it is that contains the information -->
         <p> Ratings: </p> 
         <p> All movies with average rating of 4 or more stars </p>
-        <form action= "getRatings.php" method="post">
-        </form>
+        <?php
+          include 'getRatings.php'
+        ?>
         <br>
         <footer>
             &copy; Jieni and Jaisen
