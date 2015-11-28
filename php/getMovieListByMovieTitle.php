@@ -7,7 +7,7 @@ if (!$result) {
     die("Failed to retreive Movie Information");
 }
 while ($row = mysqli_fetch_assoc($result)) {
-     echo $row["genre"];
+     echo $row["moviename"];
 }
 mysqli_free_result($result);
 ?>
