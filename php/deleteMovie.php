@@ -11,7 +11,7 @@
 
    function deleteMovie($deleteCommand,$conn) {
       if (mysqli_query($conn,$deleteCommand)) {
-           echo "<h3>Movies deleted successfully!</h3>";
+           echo "<h3>Movie deleted successfully!</h3>";
            // echo "<button class="goBack" type="button" onclick="history.go(-1)">Go Back</button>"; // a method to redirect back to page
       } else {
            echo "<p>Problem with deleting movie: " . mysqli_error($conn) . "</p>";

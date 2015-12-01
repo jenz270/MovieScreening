@@ -16,28 +16,34 @@
        <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
         <h3> Updating Movies </h3>
-<form action="updateTheMovie.php" method="post">
-Movie Title: <input type="text" name="movititle" value=
-<?php
-   echo "'";
-   echo $movietitle;
-   echo "'>";
-?>
+      <form action="updateTheMovie.php" method="post">
+      Movie Title: <input type="text" name="movititle" value=
+      <?php
+          echo "'";
+          echo $movietitle;
+          echo "'";
+      ?>
+      >
 <br>
+
 Movie Year:  <input type="number" name="movyear" min="1920" max="2020" step="1" value=
 <?php
    echo "'";
    echo $movieyear;
-   echo "'>";
+   echo "'";
 ?>
+>
+<br>
+
 <input type="hidden" name="movid" value=
 <?php
    echo "'";
    echo $selected_movie;
-   echo "'>";
+   echo "'";
 ?>
+>
 <br>
-<br>
+
 <input type="submit" value="Update this movie"><br>
    <hr>
       <footer>

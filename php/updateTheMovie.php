@@ -1,10 +1,10 @@
 <?php
    include 'connectdb.php';
    $newyear = $_POST['movyear'];
-   $newtitle = $_POST['movtitle'];
+   $newtitle = $_POST['movititle'];
    $movieid = $_POST['movid'];
    $query = 'update movie set moviename="' . $newtitle . '", year=' . $newyear . " where movieID='" . $movieid . "';";
-   echo $query;
+   echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
    if (!$result) {
       die("Database query failed");

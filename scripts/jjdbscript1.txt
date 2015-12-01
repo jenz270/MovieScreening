@@ -1,3 +1,4 @@
+
 drop database if exists jjdb;
 create database jjdb;
 use jjdb;
@@ -14,4 +15,5 @@ show tables;
 create table showing(movieID int(3), showID int(3), show_date date, show_time time, roomnum int,primary key(showID),foreign key(movieID) references movie(movieID) on delete cascade on update cascade,foreign key(roomnum) references theatre(roomnum)on delete cascade on update cascade)engine = InnoDB;
 
 create table selected(rate int(1), payment double(4,2), custID int(3), showID int(3), foreign key(custID) references customer(custID) on delete cascade on update cascade, foreign key(showID) references showing(showID) on delete cascade on update cascade)engine = InnoDB;
+
 
