@@ -53,9 +53,12 @@
         </form>
         <br>
         <h3> Update a movie: </h3>
-        
-
-        <h4> Refresh the page to see the changes on the table! </h4>
+        <form action="update.php" method="post">
+        <?php
+            include 'getMovie.php';
+        ?>
+        <p><input type="submit" value="Update Selected Movie"></p>
+        </form>
         </div>
 		
         <br>
@@ -168,7 +171,7 @@
             <p><input type="submit" value="Delete Showings"></p>
             </form>
             <h3> Update Theatre Room Information: </h3>
-            
+
         </div>
 
         <br>
@@ -177,9 +180,6 @@
  		<footer>
             &copy; Jieni and Jaisen
         </footer>
-        <?php
-                mysqli_close($connection);
-        ?>
 
 </body>
 </html>

@@ -1,10 +1,9 @@
-use jjdb;
+﻿use jjdb;
 show tables;
  
 # inserting random data into the tables
 
-insert into customer (custID,name,email,sex) values (222,"Laura Reid","lreid@csd.uwo.ca","F"), (223,"Elaine Park","elaine1@csd.uwo.ca”,”F”),(224,”Jieni Hou”,”jhou25@uwo.ca”,”F”), (225,”Jaisen Bynoe”,“jbynoe@uwo.ca”,“M”);
-
+insert into customer (custID,name,email,sex) values (222,"Laura Reid","lreid@csd.uwo.ca","F"), (223,"Elaine Park","elaine1@csd.uwo.ca","F"),(224,"Jieni Hou","jhou25@uwo.ca","F"), (225,"Jaisen Bynoe","jbynoe@uwo.ca","M");
 insert into theatre (roomnum,capacity) values (4,20),(2,10);
 
 insert into movie (movieID,moviename,year) values (100,"Ted",2013),(101,"Pride & Prejudice",2011),(102,"Godzilla",2014),(103,"The Eye",2005),(104,"Despicable Me",2014);
