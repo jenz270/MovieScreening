@@ -42,6 +42,7 @@
              mysqli_free_result($result);
         ?>
         <br> 
+        <h3> Add movies: </h3>
 
         <h3> Delete movies: </h3>
         <form action="deleteMovie.php" method="post">
@@ -50,34 +51,124 @@
             ?>
         <p><input type="submit" value="Delete Movies"></p>
         </form>
-
-        <h4> Refresh the page to see the changes on the table above! </h4>
         <br>
         <h3> Update a movie: </h3>
         
 
-        <h4> Refresh the page to see the changes on the table above! </h4>
+        <h4> Refresh the page to see the changes on the table! </h4>
         </div>
 		
         <br>
         <hr>
 
         <div id= "showings">
-        
+        <h3> All Current Showings </h3>
+        <?php
 
+            $query = "select moviename,show_date,show_time from movie join showing where movie.movieID = showing.movieID";
+            $result = mysqli_query($connection,$query);
+            if (!$result) {
+                 die("Failed to retreive showing.");
+            }
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>"."Movie Name". "</th>";
+            echo "<th>"."Show Date"."</th>";
+            echo "<th>"."Show Time"."</th>";
+            echo "</tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                 echo "<tr>";
+                 echo "<td>".$row["moviename"] . "</td>"; 
+                 echo "<td>".$row["show_date"] . "</td>";
+                 echo "<td>".$row["show_time"] . "</td>";
+                 echo "</tr>";
+            }
+            echo"</table>";
+            mysqli_free_result($result);
+        ?>
+        <br>
+        <h3> Add Showings: </h3>
+        <h3> Delete Showings: </h3>
+        <form action="deleteShow.php" method="post">
+            <?php
+             include 'getShow.php';
+            ?>
+        <p><input type="submit" value="Delete Showings"></p>
+        </form>
+        <h3> Update Showings: </h3>
         </div>
 
         <br>
         <hr>
 
         <div id="genre">
-
+         <h3> Movies and their Genre: </h3>
+         <?php
+            $query = "select moviename,genre from movie join genre where movie.movieID = genre.movieID";
+            $result = mysqli_query($connection,$query);
+            if (!$result) {
+                 die("Failed to retreive showing.");
+            }
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>"."Movie Name". "</th>";
+            echo "<th>"."Genre"."</th>";
+            echo "</tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                 echo "<tr>";
+                 echo "<td>".$row["moviename"] . "</td>"; 
+                 echo "<td>".$row["genre"] . "</td>";
+                 echo "</tr>";
+            }
+            echo"</table>";
+            mysqli_free_result($result);
+        ?>
+         <h3> Add Genre Info: </h3>
+         <h3> Delete Genre: </h3>
+         <form action="deleteGen.php" method="post">
+            <?php
+             include 'getGen.php';
+            ?>
+        <p><input type="submit" value="Delete Showings"></p>
+        </form>
+        <h3> Update Showings: </h3>
         </div>
 
         <br>
         <hr>
 
         <div id="theatreinfo">
+             <h3> Theatre Rooms and their Capacity: </h3>
+             <?php
+                 $query = "select * from theatre";
+                 $result = mysqli_query($connection,$query);
+                 if (!$result) {
+                      die("Failed to retreive showing.");
+                 }
+                 echo "<table>";
+                 echo "<tr>";
+                 echo "<th>"."Room Number". "</th>";
+                 echo "<th>"."Capacity"."</th>";
+                 echo "</tr>";
+                 while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>".$row["roomnum"] . "</td>"; 
+                    echo "<td>".$row["capacity"] . "</td>";
+                    echo "</tr>";
+                 }
+                 echo"</table>";
+                mysqli_free_result($result);
+             ?>
+            <h3> Add Theatre Room and Capacity: </h3>
+            <h3> Delete Theatre Room Information: </h3>
+            <form action="deleteThe.php" method="post">
+            <?php
+             include 'getThe.php';
+            ?>
+            <p><input type="submit" value="Delete Showings"></p>
+            </form>
+            <h3> Update Theatre Room Information: </h3>
+            
         </div>
 
         <br>

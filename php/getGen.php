@@ -1,14 +1,14 @@
 <?php
-   $query = "select * from movie";
+   $query = "select * from genre join movie on genre.movieID = movie.movieID";
    $result = mysqli_query($connection,$query);
    if (!$result) {
         die("databases query failed.");
     }
    echo "</br>";
    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<input type="radio" name="themovies[]" value="';
+        echo '<input type="radio" name="thegenre[]" value="';
         echo $row["movieID"];
-        echo '">' . $row["moviename"]. "<br>";
+        echo '">' . $row["moviename"].', '. $row["genre"]."<br>";
    }
    mysqli_free_result($result);
 ?>

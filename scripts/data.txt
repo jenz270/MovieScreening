@@ -3,7 +3,7 @@ show tables;
  
 # inserting random data into the tables
 
-insert into customer (custid,name,email,sex) values (222,"Laura Reid","lreid@csd.uwo.ca","F"), (223,"Elaine Park","elaine1@csd.uwo.ca","F");
+insert into customer (custID,name,email,sex) values (222,"Laura Reid","lreid@csd.uwo.ca","F"), (223,"Elaine Park","elaine1@csd.uwo.ca”,”F”),(224,”Jieni Hou”,”jhou25@uwo.ca”,”F”), (225,”Jaisen Bynoe”,“jbynoe@uwo.ca”,“M”);
 
 insert into theatre (roomnum,capacity) values (4,20),(2,10);
 

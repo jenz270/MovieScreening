@@ -3,22 +3,22 @@
 
            if (!empty($_POST[$chkname]))  {
                    foreach($_POST[$chkname] as $value) {
-                           $delsql="delete from movie where movieID='" . $value . "';";
-                           deleteMovie($delsql,$connection);
+                           $delsql="delete from genre where movieID='" . $value . "';";
+                           deleteGenre($delsql,$connection);
                    }
            }
    }
 
-   function deleteMovie($deleteCommand,$conn) {
+   function deleteGenre($deleteCommand,$conn) {
       if (mysqli_query($conn,$deleteCommand)) {
-           echo "<h3>Movies deleted successfully!</h3>";
+           echo "<h3>Genre deleted successfully!</h3>";
            // echo "<button class="goBack" type="button" onclick="history.go(-1)">Go Back</button>"; // a method to redirect back to page
       } else {
-           echo "<p>Problem with deleting movie: " . mysqli_error($conn) . "</p>";
+           echo "<p>Problem with deleting genre: " . mysqli_error($conn) . "</p>";
       }
     } //end of deleteMovie function
 
    include 'connectdb.php';
-   IsChecked('themovies',$connection);
+   IsChecked('thegenre',$connection);
    mysqli_close($connection);
 ?>

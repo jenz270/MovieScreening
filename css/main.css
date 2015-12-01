@@ -28,7 +28,15 @@ header,footer{
 }
 
 /* staff.php */
-
+/* #ssumary,#smanage,#cmanage{
+	border-radius: 25px;
+	background: #d3d3d3;
+	padding: 20px;
+	width: auto;
+	height: 200px;
+	text-align: center;
+} 
+*/
 
 /* customer.php */
 /* movieMod.php */
