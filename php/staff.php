@@ -39,6 +39,7 @@
         </div>
 
         <br>
+        <hr>
         
         <div id="smanage">
             <h2> Screenings Management </h2>
@@ -48,6 +49,7 @@
         </div>
 
         <br>
+        <hr>
 
         <div id="cmanage">
             <h2> Customer Management <h2>
@@ -79,6 +81,7 @@
         </div>
 
         <br>
+        <hr>
         <footer>
             &copy; Jieni and Jaisen
         </footer>

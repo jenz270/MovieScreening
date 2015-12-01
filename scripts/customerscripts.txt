@@ -10,7 +10,3 @@ select moviename, year, count(selected.custID) as custom, capacity from movie  j
 select moviename, ratings from movie join showing on movie.movieID = showing.movieID join selected on showing.showID = selected.showID join customer on selected.custID = customer.custID where customer.custID = $query?;
 
 select * from customer where customer.name = $query;
-
-
-
-IM A FAILURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! :'(

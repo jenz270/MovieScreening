@@ -3,8 +3,20 @@ create database jjdb;
 use jjdb;
 show tables;
 create table customer(custID int(3), name varchar(100) not null, email varchar(50), sex char(1), unique(custID), primary key(custID));
-create table movie(movieID int(3), moviename varchar(50) not null, year int(4), moviepicture varchar(200) unique(movieID), primary key(movieID));
+
+create table movie(movieID int(3), moviename varchar(50) not null, year int(4), moviepicture varchar(200), unique(movieID), primary key(movieID));
+
 create table theatre(roomnum int, capacity int(4), unique(roomnum), primary key(roomnum));
-create table showing(movieID int(3), showID int(3), show_date date, show_time time, roomnum int,moviepicture varchar(200), primary key(showID), foreign key(movieID) references movie(movieID),foreign key(moviepicture) references movie(moviepicture),foreign key(roomnum) references theatre(roomnum));
-create table selected(rate int(1), payment double(4,2), custID int(3), showID int(3), foreign key(custID) references customer(custID), foreign key(showID) references showing(showID));
-create table genre(genre varchar(40), movieID int(3), foreign key(movieID) references movie(movieID), primary key(genre,movieID));
+
+create table genre(genre varchar(40), movieID int(3), foreign key(movieID) references movie(movieID) on delete cascade on update cascade, primary key(genre,movieID));
+show tables;
+
+create table showing(movieID int(3), showID int(3), show_date date, show_time time, roomnum int,primary key(showID),foreign key(movieID) references movie(movieID) on delete cascade on update cascade,foreign key(roomnum) references theatre(roomnum)on delete cascade on update cascade);
+
+create table selected(rate int(1), payment double(4,2), custID int(3), showID int(3), foreign key(custID) references customer(custID) on delete cascade on update cascade, foreign key(showID) references showing(showID) on delete cascade on update cascade);
+
+
+
+
+moviepicture varchar(200)
+foreign key(moviepicture) references movie(moviepicture),
