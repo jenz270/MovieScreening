@@ -12,7 +12,9 @@
 <?php
    include 'connectdb.php';
 ?>
-<h2>Here are the Showings:</h2>
+  <header>
+                <h2> Jieni and Jaisen's Movie Screening Management System </h2>
+        </header>
 <?php
    $newTime= $_POST["showtime"];
    $newDate = $_POST["showdate"];
@@ -26,12 +28,12 @@
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $showid = (string)$newkey;
-   $query = 'insert into showing (movieID,showID,show_date,show_time,roomnum) values ('."'" . $whichid ."'". ','. $showid .','. "'". $newDate . "'". ',' ."'". $newTime . "'". ',' . $newRoom . ')';
-   echo $query;
+   $query = 'insert into showing (movieID,showID,roomnum,show_date,show_time) values ('. $whichid . ','. $showid .','. $newRoom .','."'". $newDate . "'". ',' ."'". $newTime . "'".  ')';
+   //echo $query;
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
-   echo "Your movie was added!";
+    echo "<h3>". "The Showing is now added!"."</h3>";
    mysqli_close($connection);
 ?>
 

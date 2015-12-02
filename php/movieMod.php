@@ -103,8 +103,8 @@
              Room Number: <input type="text" name="roomnum"><br>
              Movie Title:
             <?php
-                 include 'getMovie.php';
-                ?>
+                 include 'getMovieArray.php';
+            ?>
         <input type="submit" value="Add New Movie">
         </form>
         <br>
@@ -167,7 +167,7 @@
               <br>
              Movie Title: 
               <?php
-                 include 'getMovie.php';
+                 include 'getMovieArray.php';
                 ?>
         <input type="submit" value="Add New Genre to Movie">
         </form>
@@ -213,6 +213,11 @@
                 mysqli_free_result($result);
              ?>
             <h3> Add Theatre Room and Capacity: </h3>
+             <form action="addNewTheatre.php" method="post">
+             Room Number: <input type="text" name="roomnumb"><br>
+             Capacity: <input type="text" name="capa"><br>
+             <input type="submit" value="Add New Theatre">
+             </form>
             <h3> Delete Theatre Room Information: </h3>
             <form action="deleteThe.php" method="post">
             <?php

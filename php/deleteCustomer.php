@@ -15,33 +15,35 @@
 
            if (!empty($_POST[$chkname]))  {
                    foreach($_POST[$chkname] as $value) {
-                           $delsql="delete from movie where movieID='" . $value . "';";
-                           deleteMovie($delsql,$connection);
+                           $delsql="delete from customer where custID='" . $value . "';";
+                           deleteCustomer($delsql,$connection);
                    }
            }
    }
 
-   function deleteMovie($deleteCommand,$conn) {
+   function deleteCustomer($deleteCommand,$conn) {
       if (mysqli_query($conn,$deleteCommand)) {
-           echo "<h3>Movie deleted successfully!</h3>";
-           // echo "<button class="goBack" type="button" onclick="history.go(-1)">Go Back</button>"; // a method to redirect back to page
+           echo "<h3>Customer deleted successfully</h3>";
       } else {
-           echo "<p>Problem with deleting movie: " . mysqli_error($conn) . "</p>";
+           echo "<p>Problem with deleting Customer: " . mysqli_error($conn) . "</p>";
       }
     } //end of deleteMovie function
-
    include 'connectdb.php';
-   IsChecked('themovies',$connection);
+   IsChecked('thecustomers',$connection);
    mysqli_close($connection);
 ?>
 
-<hr>
-         <form action="movieMod.php">
-          <input type="submit" value="Back to Screenings Management">
+  <br>
+        <hr>
+         <form action="staff.php">
+          <input type="submit" value="Back to Management Summary">
          </form>
         <hr>
         <footer>
             &copy; Jieni and Jaisen
         </footer>
+        <?php
+                mysqli_close($connection);
+        ?>
 </body>
 </html>

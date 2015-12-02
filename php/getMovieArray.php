@@ -1,14 +1,14 @@
 <?php
-   $query = "select * from customer";
+   $query = "select * from movie";
    $result = mysqli_query($connection,$query);
    if (!$result) {
         die("databases query failed.");
     }
-   echo "<br>";
+   echo "</br>";
    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<input type="radio" name="thecustomers" value="';
-        echo $row["custID"];
-        echo '">' . $row["name"]. "<br>";
+        echo '<input type="radio" name="themovies" value="';
+        echo $row["movieID"];
+        echo '">' . $row["moviename"]. "<br>";
    }
    mysqli_free_result($result);
 ?>

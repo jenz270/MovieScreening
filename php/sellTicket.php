@@ -12,28 +12,31 @@
 <?php
    include 'connectdb.php';
 ?>
-        <header>
-           <h2> Jieni and Jaisen's Movie Screening Management System </h2>
-        </header>
+    <header>
+         <h2> Jieni and Jaisen's Movie Screening Management System </h2>
+    </header>
 <?php
-   $genre = $_POST['genreList'];
-   $whichid = $_POST['themovies'];
-   $query = 'insert into genre (genre,movieID) values ('. '"'. $genre . '",' . $whichid . ')';
-   //echo $query;
-   if (!mysqli_query($connection, $query)) {
+    $custid = $_POST['thecustomers'];
+    $showid = $_POST['theshowings'];
+    $newprice = $_POST["price"];
+    $query = 'insert into selected (rate,payment,custID,showID) values (0,'. $newprice. ",". $custid . "," . $showid . ')';
+    echo $query;
+    $result = mysqli_query($connection, $query);
+    if (!$result) {
         die("Error: insert failed" . mysqli_error($connection));
     }
-   echo "<h3>". "The Genre is now added!"."</h3>";
-   mysqli_close($connection);
+    echo "The ticket is sold!";
+
+    mysqli_close($connection);
 ?>
 
- <br>
+<br>
         <hr>
-         <form action="movieMod.php">
-          <input type="submit" value="Back to Screening Management">
+         <form action="staff.php">
+          <input type="submit" value="Back to Management Summary">
          </form>
         <hr>
-    <footer>
+        <footer>
             &copy; Jieni and Jaisen
         </footer>
 

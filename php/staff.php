@@ -53,19 +53,42 @@
 
         <div id="cmanage">
             <h2> Customer Management <h2>
+            <h3> List of All Customers: </h3>
+            <?php 
+            $query = "select * from customer";
+            $result = mysqli_query($connection,$query);
+            if(!result){
+                 die("databases query failed.");
+            }
+             echo "<table>";
+             echo "<tr>";
+             echo "<th>"."Name". "</th>";
+             echo "<th>"."Email"."</th>";
+             echo "<th>"."Sex"."</th>";
+             echo "</tr>";
+             while($row = mysqli_fetch_assoc($result)){
+                echo "<tr>";
+                echo "<td>".$row["name"] . "</td>"; 
+                echo "<td>".$row["email"] . "</td>";
+                echo "<td>".$row["sex"] . "</td>";
+                echo "</tr>";
+             }
+             echo"</table>";
+             mysqli_free_result($result);
+        ?>
             <h3> Selling Tickets: </h3>
-            <p>Customers:</p>
+            <form action="sellTicket.php">
+            Select Customer:
             <?php
-            include 'getCust.php';
+            include 'getCustArray.php';
             ?>
-            <p>Showing:</p>
+            <br>
+            Showing:
             <?php
-            include 'getShowing.php';
+            include 'getShowArray.php';
             ?>
-
-             <form action="sellticket.php">
-                <p>Ticket Price: <input type="text" name="price"><br></p> 
-                <input type="submit" value="Sell Ticket">
+             <p>Ticket Price: <input type="text" name="price"><br></p> 
+             <input type="submit" value="Sell Ticket">
              </form>
         
               <br>
@@ -73,14 +96,33 @@
              <h3> Add New Customer: </h3>
              <form action="addNewCust.php" method="post">
                 Customer name: <input type="text" name="custname"><br>
-                Customer ID: <input type="text" name="custid"><br>
                 Email: <input type="text" name="email"><br>
                 Sex: <input type="text" name="sex"><br>
                 <input type="submit" value="Add Customer">
              </form>
+              <br>
+             <h3> Delete a Customer: </h3>
+             <form action="deleteCustomer.php" method="post">
+            <?php
+             include 'getCustArray.php';
+            ?>
+            <p><input type="submit" value="Delete Customer"></p>
+            </form>
+            <br>
+             <h3> Update a Customer's Info: </h3>
+             <form action="updateCustomer.php" method="post">
+             <?php
+            include 'getCust.php';
+             ?>
+            <p><input type="submit" value="Update Selected Customer"></p>
+            </form>
         </div>
 
         <br>
+        <hr>
+         <form action="../index.php">
+          <input type="submit" value="Logout">
+         </form>
         <hr>
         <footer>
             &copy; Jieni and Jaisen

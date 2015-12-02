@@ -9,33 +9,26 @@
         <script src="../jQuery/changePage.js"></script>
 </head>
 <body>
+        <header>
+                <h2> Jieni and Jaisen's Movie Screening Management System </h2>
+        </header>
+
 <?php
    include 'connectdb.php';
 ?>
-  <header>
-                <h2> Jieni and Jaisen's Movie Screening Management System </h2>
-        </header>
 <?php
-   $newMovie= $_POST["movien"];
-   $movieYear = $_POST["year"];
-   $query1= 'select max(movieID) as maxid from movie';
-   $result=mysqli_query($connection,$query1);
-   if (!$result) {
-          die("database max query failed.");
-   }
-   $row=mysqli_fetch_assoc($result);
-   $newkey = intval($row["maxid"]) + 1;
-   $movieid = (string)$newkey;
-   $query = 'insert into movie (movieID,moviename,year) values(' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
-   //echo $query;
+   $newRoom= $_POST["roomnumb"];
+   $newCap = $_POST["capa"];
+   $query = 'insert into theatre (roomnum,capacity) values('. $newRoom .",". $newCap . ')';
+   // echo $query;
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
-   echo "Your movie was added!";
+   echo "The Theatre is added!";
    mysqli_close($connection);
 ?>
 
- <br>
+      <br>
         <hr>
          <form action="movieMod.php">
           <input type="submit" value="Back to Screening Management">
