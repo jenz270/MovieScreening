@@ -42,8 +42,13 @@
              mysqli_free_result($result);
         ?>
         <br> 
-        <h3> Add movies: </h3>
-
+        <h3> Add a movie: </h3>
+        <form action="addNewMovie.php" method="post">
+             Movie Title: <input type="text" name="movien"><br>
+             Year: <input type="text" name="year"><br>
+        <input type="submit" value="Add New Movie">
+        </form>
+        <br>
         <h3> Delete movies: </h3>
         <form action="deleteMovie.php" method="post">
             <?php
@@ -91,6 +96,18 @@
         ?>
         <br>
         <h3> Add Showings: </h3>
+        <form action="addNewShowing.php" method="post">
+            
+             Show Date: <input type="date" name="showdate"><br>
+             Show Time: <input type="time" name="showtime"><br>
+             Room Number: <input type="text" name="roomnum"><br>
+             Movie Title:
+            <?php
+                 include 'getMovie.php';
+                ?>
+        <input type="submit" value="Add New Movie">
+        </form>
+        <br>
         <h3> Delete Showings: </h3>
         <form action="deleteShow.php" method="post">
             <?php
@@ -133,7 +150,27 @@
             echo"</table>";
             mysqli_free_result($result);
         ?>
-         <h3> Add Genre Info: </h3>
+         <h3> Add Genre Info to a Movie: </h3>
+         <form action="addNewGenre.php" method="post">
+              Genre: 
+              <select name="genreList">
+                    <option value="Comedy">Comedy</option>
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Documentary">Documentary</option>
+              </select>
+              <br>
+             Movie Title: 
+              <?php
+                 include 'getMovie.php';
+                ?>
+        <input type="submit" value="Add New Genre to Movie">
+        </form>
          <h3> Delete Genre: </h3>
          <form action="deleteGen.php" method="post">
             <?php
@@ -193,7 +230,10 @@
         </div>
 
         <br>
-        
+        <hr>
+         <form action="staff.php">
+          <input type="submit" value="Back to Management Summary">
+         </form>
         <hr>
  		<footer>
             &copy; Jieni and Jaisen

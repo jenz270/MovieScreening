@@ -15,7 +15,7 @@
         </header>
 
         <br>
-        
+        <hr>
         <div id="ssumary">
             <h2> Screenings Summary </h2>
             <h3> Total Sales: </h3>
