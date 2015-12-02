@@ -98,7 +98,14 @@
             ?>
         <p><input type="submit" value="Delete Showings"></p>
         </form>
-        <h3> Update Showings: </h3>
+        <br>
+        <h3> Update a Showing: </h3>
+        <form action="updateShow.php" method="post">
+        <?php
+            include 'getShowInfo.php';
+        ?>
+        <p><input type="submit" value="Update Selected Showing"></p>
+        </form>
         </div>
 
         <br>
@@ -134,7 +141,13 @@
             ?>
         <p><input type="submit" value="Delete Showings"></p>
         </form>
-        <h3> Update Showings: </h3>
+        <h3> Update a Genre: </h3>
+        <form action="updateShow.php" method="post">
+        <?php
+            include 'getShowInfo.php';
+        ?>
+        <p><input type="submit" value="Update Selected Showing"></p>
+        </form>
         </div>
 
         <br>

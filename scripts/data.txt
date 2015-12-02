@@ -1,5 +1,5 @@
 
-﻿use jjdb;
+use jjdb;
 show tables;
  
 # inserting random data into the tables
