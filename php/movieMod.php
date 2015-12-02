@@ -181,10 +181,15 @@
             <?php
              include 'getThe.php';
             ?>
-            <p><input type="submit" value="Delete Showings"></p>
+            <p><input type="submit" value="Delete Theatre"></p>
             </form>
             <h3> Update Theatre Room Information: </h3>
-
+            <form action="updateTheatre.php" method="post">
+             <?php
+                 include 'getTheatreInfo.php';
+            ?>
+            <p><input type="submit" value="Update Selected Theatre"></p>
+            </form>
         </div>
 
         <br>

@@ -14,19 +14,18 @@
         </header>
 <?php
    include 'connectdb.php';
-   $newyear = $_POST['movyear'];
-   $newtitle = $_POST['movititle'];
-   $movieid = $_POST['movid'];
-   $query = 'update movie set moviename="' . $newtitle . '", year=' . $newyear . " where movieID='" . $movieid . "';";
+   $newcap = $_POST['cap'];
+   $roomnumb= $_POST['roomnu'];
+   $query = 'update theatre set capacity=' . $newcap .' where roomnum=' . $roomnumb . ";";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
    if (!$result) {
       die("Database query failed");
    }
    if (mysqli_query($connection, $query)) {
-      echo "Movie updated successfully";
+      echo "Theatre updated successfully";
    } else {
-      echo "Error when updating movie: " . mysqli_error($connection);
+      echo "Error when updating theatre: " . mysqli_error($connection);
    }
    mysqli_close($connection);
 ?>
