@@ -46,6 +46,19 @@
         <form action="addNewMovie.php" method="post">
              Movie Title: <input type="text" name="movien"><br>
              Year: <input type="text" name="year"><br>
+             Genre: 
+             <select name="genreList">
+                    <option value="Comedy">Comedy</option>
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Documentary">Documentary</option>
+              </select>
+              <br>
         <input type="submit" value="Add New Movie">
         </form>
         <br>

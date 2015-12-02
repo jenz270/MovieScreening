@@ -18,6 +18,7 @@
 <?php
    $newMovie= $_POST["movien"];
    $movieYear = $_POST["year"];
+   $newGenre = $_POST["genreList"];
    $query1= 'select max(movieID) as maxid from movie';
    $result=mysqli_query($connection,$query1);
    if (!$result) {
@@ -26,9 +27,14 @@
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $movieid = (string)$newkey;
-   $query = 'insert into movie (movieID,moviename,year) values(' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
+   $query = 'insert into movie (movieID,moviename,year) values (' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
+   $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $movieid . ')';
    //echo $query;
+   //echo $query2;
    if (!mysqli_query($connection, $query)) {
+        die("Error: insert failed" . mysqli_error($connection));
+    }
+    if (!mysqli_query($connection, $query2)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
    echo "Your movie was added!";
