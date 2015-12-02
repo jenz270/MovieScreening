@@ -17,7 +17,7 @@
         </header>
         <h3> Updating Genre </h3>
       <form action="updateTheGenres.php" method="post">
-    Movie Name: <input type="text" name="movititle" value=
+    Movie Name: <input type="text" value=
       <?php
           echo "'";
           echo $movietitle;
@@ -26,7 +26,7 @@
       >
     <br>
 
-     Genre: <input type="text" name="genre" value=
+     Genre: <input type="text" name="ggenre" value=
         <?php
            echo "'";
            echo $genre;
@@ -43,7 +43,7 @@
 ?>
 >
 <br>
-<input type="submit" value="Update this movie">
+<input type="submit" value="Update this Genre">
 <br>
    <hr>
       <footer>

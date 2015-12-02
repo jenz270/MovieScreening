@@ -142,11 +142,11 @@
         <p><input type="submit" value="Delete Showings"></p>
         </form>
         <h3> Update a Genre: </h3>
-        <form action="updateShow.php" method="post">
+        <form action="updateGenre.php" method="post">
         <?php
-            include 'getShowInfo.php';
+            include 'getGenreInfo.php';
         ?>
-        <p><input type="submit" value="Update Selected Showing"></p>
+        <p><input type="submit" value="Update Selected Genre"></p>
         </form>
         </div>
 
