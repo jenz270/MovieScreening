@@ -11,23 +11,31 @@
 <?php
    include 'connectdb.php';
 ?>
-  <header>
-                <h2> Jieni and Jaisen's Movie Screening Management System </h2>
+        <header>
+           <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
 <?php
+   $newid = $_POST["movieid"];
    $newMovie= $_POST["movien"];
    $movieYear = $_POST["year"];
    $newGenre = $_POST["genreList"];
+   if (empty($newid)){
    $query1= 'select max(movieID) as maxid from movie';
    $result=mysqli_query($connection,$query1);
-   if (!$result) {
+    if (!$result) {
           die("database max query failed.");
-   }
+      }
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $movieid = (string)$newkey;
    $query = 'insert into movie (movieID,moviename,year) values (' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
    $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $movieid . ')';
+   }
+   else{
+      $query = 'insert into movie (movieID,moviename,year) values (' . $newid . ',"' . $newMovie . '",' . $movieYear . ')';
+      $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $newid . ')';
+
+   }
    //echo $query;
    //echo $query2;
    if (!mysqli_query($connection, $query)) {

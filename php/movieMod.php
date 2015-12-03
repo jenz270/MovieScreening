@@ -50,8 +50,9 @@
         <li class="second">
         <h3> Add a movie: </h3>
         <form action="addNewMovie.php" method="post">
+             Movie ID: <input type="number" name="movieid" min="0" max="999"><br>
              Movie Title: <input type="text" name="movien"><br>
-             Year: <input type="text" name="year"><br>
+             Year of Release: <input type="text" name="year"><br>
              Genre: 
              <select name="genreList">
                     <option value="Comedy">Comedy</option>
@@ -81,7 +82,7 @@
         <h3> Update a movie: </h3>
         <form action="update.php" method="post">
         <?php
-            include 'getMovie.php';
+            include 'getMovieArray.php';
         ?>
         <p><input type="submit" value="Update Selected Movie"></p>
         </form>

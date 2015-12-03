@@ -22,6 +22,7 @@
 
         <br>
         <hr>
+        <h2> Management Summary </h2> 
         <div id="ssumary">
             <h2 class="titles"> Screenings Summary </h2>
         <ul>
