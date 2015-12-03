@@ -48,7 +48,6 @@
         </div>
 
         <br>
-        <hr>
         
         <div id="smanage">
             <h2 class="titles"> Screenings Management </h2>
@@ -58,7 +57,6 @@
         </div>
 
         <br>
-        <hr>
 
         <div id="cmanage">
             <h2 class="titles"> Customer Management <h2>

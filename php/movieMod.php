@@ -89,7 +89,6 @@
         </ul>
         </div>
         <br>
-        <hr>
         <br>
         <div id= "showings">
         <h2 class="titles"> Showings </h2>
@@ -155,7 +154,6 @@
         </div>
 
         <br>
-        <hr>
 
         <div id="genre">
             <h2 class="titles"> Genre </h2>
@@ -226,7 +224,6 @@
         </div>
 
         <br>
-        <hr>
         <br>
         <div id="theatreinfo">
             <h2 class="titles"> Theatre </h2>
