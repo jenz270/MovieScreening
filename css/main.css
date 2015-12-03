@@ -49,10 +49,11 @@ index.php
 #ssumary{
 	background-color: #ffeecc;
 	border-radius: 25px;
-	padding: 300px;
+	padding: 20px;
 	padding-top: 10px;
-	width: auto;
-	height: 200px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #ssumary ul{
@@ -83,8 +84,9 @@ index.php
 	border-radius: 25px;
 	padding: 20px;
 	padding-top: 10px;
-	width: auto;
-	height: 100px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #cmanage{
@@ -92,8 +94,9 @@ index.php
 	border-radius: 25px;
 	padding: 20px;
 	padding-top: 10px;
-	width: auto;
-	height: 800px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #cmanage ul{
@@ -123,8 +126,9 @@ index.php
 	border-radius: 25px;
 	padding: 50px;
 	padding-top: 10px;
-	width: auto;
-	height: 700px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #movies ul{
@@ -142,8 +146,9 @@ index.php
 	border-radius: 25px;
 	padding: 100px;
 	padding-top: 10px;
-	width: auto;
-	height: 600px;
+	width: 70%;
+    margin: 0 auto;
+	height: auto;
 }
 
 #showings ul{
@@ -161,8 +166,9 @@ index.php
 	border-radius: 25px;
 	padding: 100px;
 	padding-top: 10px;
-	width: auto;
-	height: 600px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #genre ul{
@@ -180,8 +186,9 @@ index.php
 	border-radius: 25px;
 	padding: 100px;
 	padding-top: 10px;
-	width: auto;
-	height: 400px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
 }
 
 #theatreinfo ul{
