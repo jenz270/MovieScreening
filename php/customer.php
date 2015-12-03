@@ -38,11 +38,26 @@
 	<!-- genre -->
 	<p> This is the current showing that you had just seen: </p>
 	<p> Showings: </p>
-	<p> Genre </p>	<!-- let the user select from the multiple genres within the data base. Give a warning 					if there are no seats left for the showing --> 
+	<p> Genre </p>	<!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
+
+	  <form action="getCustInfo.php" method="post">
+
+        <?php
+                include 'movieList.php';
+        ?>
+
+	 
 	<p> Date </p>	<!-- Search for date entered, make sure to change into certain format. -->
 					<!-- Also remmember prompt warning when there is no seats left -->
 	<p> Theatre </p> <!-- based on theatres that still have seats left -->
 	<p> Movie Title </p> <!-- Let the user type in input -->
+	
+	   <?php
+                include 'getMovie.php';
+        ?>
+
+
+
 	<br>
 
 	<br>
