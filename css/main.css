@@ -11,7 +11,14 @@ header,footer{
 	font-family: 'Shadows Into Light Two', cursive;
 }
 
-/* index.php */
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/********************* 
+index.php 
+*********************/
 
 #gallery{
 	text-align: center;
@@ -27,17 +34,31 @@ header,footer{
 	padding: 10px;
 }
 
-/* staff.php */
+/*********************
+ staff.php 
+ *********************/
 /* #ssumary,#smanage,#cmanage{
 	border-radius: 25px;
 	background: #d3d3d3;
 	padding: 20px;
 	width: auto;
 	height: 200px;
-	text-align: center;
 } 
 */
 
-/* customer.php */
-/* movieMod.php */
+#ssumary,#smanage,#cmanage{
+	text-align: center;
+}
+
+/*********************
+  customer.php 
+ *********************/
+
+/*********************
+  movieMod.php 
+ *********************/
+
+ #movies,#showings,#genre,#theatreinfo{
+ 	text-align:center;
+ }
 

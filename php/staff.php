@@ -60,7 +60,7 @@
             if(!result){
                  die("databases query failed.");
             }
-             echo "<table>";
+             echo "<table align="" . "center"."">";
              echo "<tr>";
              echo "<th>"."Name". "</th>";
              echo "<th>"."Email"."</th>";
@@ -77,17 +77,18 @@
              mysqli_free_result($result);
         ?>
             <h3> Selling Tickets: </h3>
-            <form action="sellTicket.php">
             Select Customer:
+            <form action="sellTicket.php" method="post">
             <?php
-            include 'getCustArray.php';
+            include 'getCust.php';
             ?>
             <br>
             Showing:
             <?php
             include 'getShowArray.php';
             ?>
-             <p>Ticket Price: <input type="text" name="price"><br></p> 
+            <br>
+             Ticket Price: <input type="number" name="price" min="1"><br>
              <input type="submit" value="Sell Ticket">
              </form>
         

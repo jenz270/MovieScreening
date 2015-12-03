@@ -6,7 +6,7 @@
     }
    echo "</br>";
    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<input type="radio" name="theshowings[]" value="';
+        echo '<input type="radio" name="theshowings" value="';
         echo $row["showID"];
         echo '">' . $row["moviename"]. ', '.$row["show_date"]. ', '.$row["show_time"]."<br>";
    }

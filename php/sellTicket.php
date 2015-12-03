@@ -18,14 +18,14 @@
 <?php
     $custid = $_POST['thecustomers'];
     $showid = $_POST['theshowings'];
-    $newprice = $_POST["price"];
+    $newprice = $_POST["price"]; 
     $query = 'insert into selected (rate,payment,custID,showID) values (0,'. $newprice. ",". $custid . "," . $showid . ')';
-    echo $query;
+    //echo $query;
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die("Error: insert failed" . mysqli_error($connection));
     }
-    echo "The ticket is sold!";
+    echo "<h3>" ."The ticket is sold!" . "</h3>";
 
     mysqli_close($connection);
 ?>
