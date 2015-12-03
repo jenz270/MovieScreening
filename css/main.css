@@ -16,6 +16,11 @@ table{
 	margin-right: auto;
 }
 
+.titles{
+	font-family: 'Shadows Into Light Two', cursive;
+	text-align: center;
+}
+
 /********************* 
 index.php 
 *********************/
@@ -37,17 +42,68 @@ index.php
 /*********************
  staff.php 
  *********************/
-/* #ssumary,#smanage,#cmanage{
-	border-radius: 25px;
-	background: #d3d3d3;
-	padding: 20px;
-	width: auto;
-	height: 200px;
-} 
-*/
-
 #ssumary,#smanage,#cmanage{
 	text-align: center;
+}
+
+#ssumary{
+	background-color: #ffeecc;
+	border-radius: 25px;
+	padding: 300px;
+	padding-top: 10px;
+	width: auto;
+	height: 200px;
+}
+
+#ssumary ul{
+	list-style: none;
+	position: center;
+}
+
+#ssumary li{
+	display: inline-block;
+	padding: 10px;
+}
+
+.first,.second,.third,.thirdd,.forth{
+	border-style:dashed;
+}
+
+.first,.second,.thirdd{
+	margin-right: 30px;
+}
+
+.third {
+	padding-top: 30px;
+	margin-top: 30px;
+}
+
+#smanage{
+	background-color: #ffeeee;
+	border-radius: 25px;
+	padding: 20px;
+	padding-top: 10px;
+	width: auto;
+	height: 100px;
+}
+
+#cmanage{
+	background-color: #cceeff;
+	border-radius: 25px;
+	padding: 20px;
+	padding-top: 10px;
+	width: auto;
+	height: 800px;
+}
+
+#cmanage ul{
+	list-style: none;
+	position: relative;
+}
+
+#cmanage li{
+	display: inline-block;
+	padding: 15px;
 }
 
 /*********************
@@ -61,4 +117,93 @@ index.php
  #movies,#showings,#genre,#theatreinfo{
  	text-align:center;
  }
+
+#movies{
+	background-color: #cceecc;
+	border-radius: 25px;
+	padding: 50px;
+	padding-top: 10px;
+	width: auto;
+	height: 700px;
+}
+
+#movies ul{
+	list-style: none;
+	position: center;
+}
+
+#movies li{
+	display: inline-block;
+	padding: 10px;
+}
+
+#showings{
+	background-color: #cceeee;
+	border-radius: 25px;
+	padding: 100px;
+	padding-top: 10px;
+	width: auto;
+	height: 600px;
+}
+
+#showings ul{
+	list-style: none;
+	position: center;
+}
+
+#showings li{
+	display: inline-block;
+	padding: 10px;
+}
+
+#genre{
+	background-color: #ffeeff;
+	border-radius: 25px;
+	padding: 100px;
+	padding-top: 10px;
+	width: auto;
+	height: 600px;
+}
+
+#genre ul{
+	list-style: none;
+	position: center;
+}
+
+#genre li{
+	display: inline-block;
+	padding: 10px;
+}
+
+#theatreinfo{
+	background-color: #ffeedd;
+	border-radius: 25px;
+	padding: 100px;
+	padding-top: 10px;
+	width: auto;
+	height: 400px;
+}
+
+#theatreinfo ul{
+	list-style: none;
+	position: center;
+}
+
+#theatreinfo li{
+	display: inline-block;
+	padding: 10px;
+}
+
+/********************
+ Responsiveness
+ *******************/
+ /*@media only screen and (max-width: 1070px) {
+    #ssumary{
+	padding: 70px;
+	padding-top: 10px;
+	width: auto;
+	height: 100px;
+}
+
+*/
 

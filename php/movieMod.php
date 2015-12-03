@@ -15,11 +15,11 @@
         <header>
                 <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
-
-        <br>
+        <hr>
         <h2> Screenings Management </h2>
-        
+        <br>
         <div id="movies">
+            <h2 class="titles"> Movies </h2>
         <h3> All Movies by year: </h3>
         <?php 
             $query = "select moviename,year from movie order by year";
@@ -42,6 +42,8 @@
              mysqli_free_result($result);
         ?>
         <br> 
+        <ul>
+        <li class="second">
         <h3> Add a movie: </h3>
         <form action="addNewMovie.php" method="post">
              Movie Title: <input type="text" name="movien"><br>
@@ -61,7 +63,8 @@
               <br>
         <input type="submit" value="Add New Movie">
         </form>
-        <br>
+        </li>
+        <li class="second">
         <h3> Delete movies: </h3>
         <form action="deleteMovie.php" method="post">
             <?php
@@ -69,7 +72,8 @@
             ?>
         <p><input type="submit" value="Delete Movies"></p>
         </form>
-        <br>
+        </li>
+        <li class="second">
         <h3> Update a movie: </h3>
         <form action="update.php" method="post">
         <?php
@@ -77,12 +81,14 @@
         ?>
         <p><input type="submit" value="Update Selected Movie"></p>
         </form>
+        </li>
+        </ul>
         </div>
-		
         <br>
         <hr>
-
+        <br>
         <div id= "showings">
+        <h2 class="titles"> Showings </h2>
         <h3> All Current Showings </h3>
         <?php
 
@@ -108,6 +114,8 @@
             mysqli_free_result($result);
         ?>
         <br>
+        <ul>
+            <li class="second">
         <h3> Add Showings: </h3>
         <form action="addNewShowing.php" method="post">
             
@@ -120,7 +128,8 @@
             ?>
         <input type="submit" value="Add New Movie">
         </form>
-        <br>
+        </li>
+        <li class="second">
         <h3> Delete Showings: </h3>
         <form action="deleteShow.php" method="post">
             <?php
@@ -128,7 +137,8 @@
             ?>
         <p><input type="submit" value="Delete Showings"></p>
         </form>
-        <br>
+        </li>
+        <li class="second">
         <h3> Update a Showing: </h3>
         <form action="updateShow.php" method="post">
         <?php
@@ -136,12 +146,15 @@
         ?>
         <p><input type="submit" value="Update Selected Showing"></p>
         </form>
+        </li>
+        </ul>
         </div>
 
         <br>
         <hr>
 
         <div id="genre">
+            <h2 class="titles"> Genre </h2>
          <h3> Movies and their Genre: </h3>
          <?php
             $query = "select moviename,genre from movie join genre where movie.movieID = genre.movieID";
@@ -163,6 +176,8 @@
             echo"</table>";
             mysqli_free_result($result);
         ?>
+        <ul>
+            <li class="second">
          <h3> Add Genre Info to a Movie: </h3>
          <form action="addNewGenre.php" method="post">
               Genre: 
@@ -184,6 +199,8 @@
                 ?>
         <input type="submit" value="Add New Genre to Movie">
         </form>
+        </li> 
+        <li class="second">  
          <h3> Delete Genre: </h3>
          <form action="deleteGen.php" method="post">
             <?php
@@ -191,6 +208,8 @@
             ?>
         <p><input type="submit" value="Delete Showings"></p>
         </form>
+       </li>
+       <li class="second">
         <h3> Update a Genre: </h3>
         <form action="updateGenre.php" method="post">
         <?php
@@ -198,12 +217,15 @@
         ?>
         <p><input type="submit" value="Update Selected Genre"></p>
         </form>
+        </li>
+       </ul>
         </div>
 
         <br>
         <hr>
-
+        <br>
         <div id="theatreinfo">
+            <h2 class="titles"> Theatre </h2>
              <h3> Theatre Rooms and their Capacity: </h3>
              <?php
                  $query = "select * from theatre";
@@ -225,12 +247,16 @@
                  echo"</table>";
                 mysqli_free_result($result);
              ?>
+             <ul>
+                <li class="second">
             <h3> Add Theatre Room and Capacity: </h3>
              <form action="addNewTheatre.php" method="post">
              Room Number: <input type="text" name="roomnumb"><br>
              Capacity: <input type="text" name="capa"><br>
              <input type="submit" value="Add New Theatre">
              </form>
+         </li>
+         <li class="second">
             <h3> Delete Theatre Room Information: </h3>
             <form action="deleteThe.php" method="post">
             <?php
@@ -238,6 +264,8 @@
             ?>
             <p><input type="submit" value="Delete Theatre"></p>
             </form>
+        </li>
+        <li class="second">
             <h3> Update Theatre Room Information: </h3>
             <form action="updateTheatre.php" method="post">
              <?php
@@ -245,6 +273,8 @@
             ?>
             <p><input type="submit" value="Update Selected Theatre"></p>
             </form>
+        </li>
+       </ul>
         </div>
 
         <br>

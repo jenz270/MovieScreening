@@ -17,32 +17,35 @@
         <br>
         <hr>
         <div id="ssumary">
-            <h2> Screenings Summary </h2>
+            <h2 class="titles"> Screenings Summary </h2>
+        <ul>
+            <li class="first">
             <h3> Total Sales: </h3>
             <?php
             include 'getGenre.php';
             ?>
-             <br>
-
+            </li>
+            <li class="second">
              <h3> Movie Count by Genre: </h3>
              <?php
              include 'getNum.php';
              ?>
-
-            <br>
-
+            </li>
+            <li class="third">
             <h3> Ratings: </h3> 
             <h3> All movies with average rating of 4 or more stars </h3>
             <?php
             include 'getRatings.php';
             ?>
+            </li>
+          </ul>
         </div>
 
         <br>
         <hr>
         
         <div id="smanage">
-            <h2> Screenings Management </h2>
+            <h2 class="titles"> Screenings Management </h2>
             <form method="link" action="movieMod.php">
                <input type="submit" value="Enter">
             </form>
@@ -52,7 +55,7 @@
         <hr>
 
         <div id="cmanage">
-            <h2> Customer Management <h2>
+            <h2 class="titles"> Customer Management <h2>
             <h3> List of All Customers: </h3>
             <?php 
             $query = "select * from customer";
@@ -60,7 +63,7 @@
             if(!result){
                  die("databases query failed.");
             }
-             echo "<table align="" . "center"."">";
+             echo "<table align=". '"'. "center". '"'. ">";
              echo "<tr>";
              echo "<th>"."Name". "</th>";
              echo "<th>"."Email"."</th>";
@@ -76,32 +79,35 @@
              echo"</table>";
              mysqli_free_result($result);
         ?>
+          <ul>
+          <li class="first">
             <h3> Selling Tickets: </h3>
-            Select Customer:
+            <h3> Select Customer:</h3>
             <form action="sellTicket.php" method="post">
             <?php
             include 'getCust.php';
             ?>
-            <br>
-            Showing:
+            <h3> Showing: </h3>
             <?php
             include 'getShowArray.php';
             ?>
             <br>
-             Ticket Price: <input type="number" name="price" min="1"><br>
+             <h3> Ticket Price: <input type="number" name="price" min="1"></h3><br>
              <input type="submit" value="Sell Ticket">
              </form>
-        
-              <br>
-
+           </li>
+              
+            <li class="second">
              <h3> Add New Customer: </h3>
              <form action="addNewCust.php" method="post">
-                Customer name: <input type="text" name="custname"><br>
-                Email: <input type="text" name="email"><br>
-                Sex: <input type="text" name="sex"><br>
+                <h3>Customer name: <input type="text" name="custname"></h3>
+                <h3>Email: <input type="text" name="email"></h3>
+                <h3>Sex: <input type="text" name="sex"></h3>
                 <input type="submit" value="Add Customer">
              </form>
-              <br>
+             </li>
+          
+            <li class="thirdd">
              <h3> Delete a Customer: </h3>
              <form action="deleteCustomer.php" method="post">
             <?php
@@ -109,7 +115,9 @@
             ?>
             <p><input type="submit" value="Delete Customer"></p>
             </form>
-            <br>
+            </li>
+           
+            <li class="forth">
              <h3> Update a Customer's Info: </h3>
              <form action="updateCustomer.php" method="post">
              <?php
@@ -117,6 +125,8 @@
              ?>
             <p><input type="submit" value="Update Selected Customer"></p>
             </form>
+           </li>
+          </ul>
         </div>
 
         <br>
