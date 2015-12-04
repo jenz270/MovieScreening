@@ -49,12 +49,34 @@
 	 
 	<p> Date </p>	<!-- Search for date entered, make sure to change into certain format. -->
 					<!-- Also remmember prompt warning when there is no seats left -->
+
+
+	     <form action="getMovieListByDate.php" method="post">
+  StartDate:
+          <input type="date" name="startdate">
+  EndDate:
+          <input type="date" name="enddate">
+          <input type="submit" value="Enter">
+        </form>
+
+
 	<p> Theatre </p> <!-- based on theatres that still have seats left -->
+	
+	 <?php
+                include 'getMovieListByTheatre.php';
+        ?>
+
+
+
+
 	<p> Movie Title </p> <!-- Let the user type in input -->
 	
-	   <?php
-                include 'getMovie.php';
+	   <form action="getMovieListByMovieTitle.php" method="post">
+        <?php
+        include 'getMovieTitle.php';
         ?>
+        <input type="submit" value="By Title"/>
+        </form>
 
 
 
