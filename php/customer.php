@@ -24,16 +24,27 @@
 	<!-- Look at how to display the user's recently watched movie-->
 	<p> This is the current showing that you had just seen: </p>
 
-	<form>
+	 <form action="updateRating.php" method="post">
 	<p> Give a rating to the movie: </p>
 	<input type="radio" name="rating" value="one">1<br>
 	<input type="radio" name="rating" value="two">2<br>
 	<input type="radio" name="rating" value="three">3<br>
 	<input type="radio" name="rating" value="four">4<br>
 	<input type="radio" name="rating" value="five">5<br>
-	<input type="submit" value="Submit">
+	 <?php
+
+                include 'getCustList.php';
+                include 'getMovieTitle.php';
+
+        ?>
+
+        <input type="submit" name ="submit" value="rating" />
 	</form>
 	<br>
+
+
+
+
 	<!-- Look at how to display the user's recently watched movie-->
 	<!-- genre -->
 	<p> This is the current showing that you had just seen: </p>
@@ -57,14 +68,15 @@
   EndDate:
           <input type="date" name="enddate">
           <input type="submit" value="Enter">
-        </form>
+          </form>
 
 
 	<p> Theatre </p> <!-- based on theatres that still have seats left -->
 	
-	 <?php
-                include 'getMovieListByTheatre.php';
-        ?>
+	 <form action="getMovieListByTheatre.php" method="post">
+
+        <input type="submit" value="Availability"/>
+        </form>
 
 
 
