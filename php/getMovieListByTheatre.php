@@ -17,7 +17,7 @@
 
 <?php
 include 'connectdb.php';
-    $query = "select moviename,year, capacity, count(selected.custID) as total from movie left join showing on movie.movieID = showing.movieID left join selected on selected.showID = showing.showID left join theatre on showing.roomnum = theatre.roomnum group by showing.showID having total < capacity";
+    $query = "select moviename,year, show_date, show_time, capacity, count(selected.custID) as total from movie left join showing on movie.movieID = showing.movieID left join selected on selected.showID = showing.showID left join theatre on showing.roomnum = theatre.roomnum group by showing.showID having total < capacity";
     $result = mysqli_query($connection,$query);
     if(!result){
         die(" Could not load movies.");

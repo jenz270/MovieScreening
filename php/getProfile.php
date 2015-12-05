@@ -20,7 +20,7 @@
     include 'connectdb.php';
     $customer = $_POST["customerList"];
     if (($_POST["customerList"] != " ")){
-        $query = "select * from customer where custID=". $customer;
+       // $query = "select * from customer where custID=". $customer;
         $result = mysqli_query($connection,$query);
         if(!result){
          die("databases query failed.");
@@ -73,7 +73,7 @@ mysqli_close($connection);
     <li class="second">
         <h3> Genre </h3>    <!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
 
-        <form action="getCustInfo.php" method="post">
+        <form action="getMovieListByGenre.php" method="post">
             <?php
             include 'movieList.php';
             ?> 
