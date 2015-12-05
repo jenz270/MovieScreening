@@ -1,3 +1,7 @@
+<!--
+    sellTicket.php sells the tickets to the customer selected by the staff
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +18,13 @@
     <header>
          <h2> Jieni and Jaisen's Movie Screening Management System </h2>
     </header>
+    <hr>
+    <br>
 <?php
     $custid = $_POST['thecustomers'];
     $showid = $_POST['theshowings'];
     $newprice = $_POST["price"]; 
+    if(isset($_POST['thecustomers']) and isset($_POST['theshowings']) and !empty($newprice)){
     $query = 'insert into selected (rate,payment,custID,showID) values (0,'. $newprice. ",". $custid . "," . $showid . ')';
     //echo $query;
     $result = mysqli_query($connection, $query);
@@ -25,7 +32,10 @@
         die("Error: insert failed" . mysqli_error($connection));
     }
     echo "<h3>" ."The ticket is sold!" . "</h3>";
-
+    }
+    else{
+        echo "<h3>" . "Please make sure to fill out all fields! Click the button below and make sure to fill all information." . "</h3>";
+    }
     mysqli_close($connection);
 ?>
 

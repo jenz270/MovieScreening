@@ -1,3 +1,7 @@
+<!--
+  getShowArray.php gets all showings that are being shown at the moment
+-->
+
 <?php
    $query = "select * from showing join movie on showing.movieID = movie.movieID";
    $result = mysqli_query($connection,$query);

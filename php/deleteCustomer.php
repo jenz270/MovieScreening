@@ -1,3 +1,7 @@
+<!-- 
+  deleteCustomer.php deletes the customer selected by the staff from the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +15,8 @@
         <header>
                 <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
+        <hr>
+        <br>
 <?php
    function IsChecked($chkname,$connection)  {
 
@@ -30,7 +36,12 @@
       }
     } //end of deleteMovie function
    include 'connectdb.php';
+   if(isset($_POST['thecustomers'])){
    IsChecked('thecustomers',$connection);
+ }
+ else{
+    echo "<h3>" ."Please make sure to select an option. Click the button to go back.". "</h3>";
+ }
    mysqli_close($connection);
 ?>
 

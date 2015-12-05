@@ -1,3 +1,7 @@
+<!--
+	getNum.php gets the number of movies that are within a genre
+-->
+
 <?php
 $query = "select genre, count(genre) as movie_count from genre join movie on genre.movieID = movie.movieID group by genre";
 $result = mysqli_query($connection,$query);

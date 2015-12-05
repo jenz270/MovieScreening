@@ -1,3 +1,7 @@
+<!--
+  getCustArray.php gets all customers and stores in a selection menu
+-->
+
 <?php
    $query = "select * from customer";
    $result = mysqli_query($connection,$query);

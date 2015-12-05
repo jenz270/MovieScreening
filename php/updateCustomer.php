@@ -1,3 +1,7 @@
+<!--
+  updateCustomer.php allows the staff to update the customer information 
+-->
+
 <!DOCTYPE html>
 <html>
 <head>

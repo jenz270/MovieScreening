@@ -120,6 +120,17 @@ index.php
 	width: 70%;
 	margin: 0 auto;
 	height: auto;
+	text-align: center;
+}
+
+#current ul{
+	list-style: none;
+	position: relative;
+}
+
+#current li{
+	display: inline-block;
+	padding: 15px;
 }
 
 /*********************

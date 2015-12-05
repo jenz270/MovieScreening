@@ -1,3 +1,6 @@
+<!--
+  getCust.php gets all customers and allows selection from menu
+-->
 <?php
    $query = "select * from customer";
    $result = mysqli_query($connection,$query);

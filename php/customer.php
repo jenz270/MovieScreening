@@ -18,8 +18,10 @@
 	
 	<hr>
 	<div id="current">
-
-    <h2> Customer Profile </h2>
+    <h2 class="titles"> Customer Profile </h2>
+    <ul>
+      <li class="first">
+    <h3> Give a rating to the movie that you've seen: </h3>
  		<?php
                 include 'getCustList.php';
                 include 'getMovieTitle.php';
@@ -31,12 +33,11 @@
 	<input type="radio" name="rating" value="three">3<br>
 	<input type="radio" name="rating" value="four">4<br>
 	<input type="radio" name="rating" value="five">5<br>
-
-        <br><input type="submit" name ="submit" value="rating" />
+  <br><input type="submit" name ="submit" value="rating" />
 	</form>
-	<br>
-
-	<h2> Shows that you had seen: </h2>
+	</li>
+  
+  <li class="second">
 	<h3> Genre </h3>	<!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
 
 	  <form action="getCustInfo.php" method="post">
@@ -45,23 +46,21 @@
         ?> 
 	<h3> Date </h3>	<!-- Search for date entered, make sure to change into certain format. -->
 					<!-- Also remmember prompt warning when there is no seats left -->
-
         <form action="getMovieListByDate.php" method="post">
-  StartDate:
+       <h3> StartDate: </h3>
           <input type="date" name="startdate">
-  EndDate:
-          <input type="date" name="enddate" >
+      <h3> EndDate: </h3>
+          <input type="date" name="enddate" ><br>
           <input type="submit" value="Enter"/>
         </form>
-        <p> Theatre </p> <!-- based on theatres that still have seats left -->
 
+        <h3> Theatre </h3> <!-- based on theatres that still have seats left -->
         <form action="getMovieListByTheatre.php" method="post">
 
         <input type="submit" value="Availability"/>
         </form>
 
-        <p> Movie Title </p> <!-- Let the user type in input -->
-
+        <h3> Movie Title </h3> <!-- Let the user type in input -->
         <form action="getMovieListByMovieTitle.php" method="post">
         <?php
         include 'getMovieTitle.php';
@@ -70,8 +69,14 @@
         </form>
 	</div>
 	<br>
-
+</li>
+</ul>
 	<br>
+    <hr>
+         <form action="../index.php">
+          <input type="submit" value="Logout">
+         </form>
+        <hr>
 	<footer>
 		&copy; Jieni and Jaisen
 	</footer>

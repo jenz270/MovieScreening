@@ -1,3 +1,7 @@
+<!-- 
+   getSelectedCustomer.php gets the selected customer's information
+-->
+
 <?php
    include 'connectdb.php';
    $selected_cust = $_POST['thecustomers'];
