@@ -17,9 +17,14 @@ if (!$result) {
     die("Failed to retreive Customer Information");
 }
  if (mysqli_query($connection, $query)) {
+
       echo "Updated Successfully";
+
    } else {
-      echo "Failed to update for Customer " . mysqli_close(connection);
+ 
+
+     echo "Failed to update for Customer " . mysqli_close(connection);
+
    }
 
 mysqli_close($connection);

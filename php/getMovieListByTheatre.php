@@ -1,3 +1,6 @@
+<----
+
+
 
 <?php
 
@@ -9,8 +12,27 @@ include 'connectdb.php';
     if(!result){
         die(" Could not load movies.");
     }
+     
+
+    $rowcount = mysqli_num_rows($result);
+
+
+    if($rowcount==0){
+
+
+        PRINT "There is no showing available";
+
+        }
+
+   else{
+
+
     while ($row = mysqli_fetch_assoc($result)) {
-     echo $row["Current_Movies"];
+
+
+     echo $row["moviename"]. " - ". $row["year"] . " - " . $row["roomnum"]. "</br>";
     }
+
+}
     mysqli_free_result($result);
 ?>
