@@ -1,4 +1,4 @@
- 
+<!-- Returns the genres from the database into a dropdown list that the user can select--> 
 <?php
    include 'connectdb.php';
    $query = "select * from genre join movie on genre.movieID = movie.movieID";
