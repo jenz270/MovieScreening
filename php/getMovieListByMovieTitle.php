@@ -1,3 +1,5 @@
+<!-- Returns if a movie has a showing by title and will tell the costumer if seats are not available-->
+
 <?php
 include 'connectdb.php';
 ?>
@@ -12,6 +14,11 @@ $result = mysqli_query($connection,$query);
 if (!$result) {
     die("Failed to retreive Movie Information");
 }
+
+
+$rowcount = mysqli_num_rows($result);
+
+
 if($rowcount==0){
 
 	 PRINT "No showings available for this Movie!";
