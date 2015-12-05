@@ -14,50 +14,35 @@
 	<header>
 		<h2> Welcome to Jieni and Jaisen's Movie Screening Management System </h2>
 	</header>
-
+	
 	<hr>
 	<div id="current">
-	<!-- Look at how to display the user's usernsme or name here -->
-	<p> Welcome back, </p>
 
-	<!-- Look at how to display the user's recently watched movie-->
-	<p> This is the current showing that you had just seen: </p>
-
+    <h2> Customer Profile </h2>
+ 		<?php
+                include 'getCustList.php';
+                include 'getMovieTitle.php';
+        ?>
 	 <form action="updateRating.php" method="post">
-	<p> Give a rating to the movie: </p>
+	<h3> Give a rating to the movie: </h3>
 	<input type="radio" name="rating" value="one">1<br>
 	<input type="radio" name="rating" value="two">2<br>
 	<input type="radio" name="rating" value="three">3<br>
 	<input type="radio" name="rating" value="four">4<br>
 	<input type="radio" name="rating" value="five">5<br>
-	 <?php
 
-                include 'getCustList.php';
-                include 'getMovieTitle.php';
-
-        ?>
-
-        <input type="submit" name ="submit" value="rating" />
+        <br><input type="submit" name ="submit" value="rating" />
 	</form>
 	<br>
 
-
-
-
-	<!-- Look at how to display the user's recently watched movie-->
-	<!-- genre -->
-	<p> This is the current showing that you had just seen: </p>
-	<p> Showings: </p>
-	<p> Genre </p>	<!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
+	<h2> Shows that you had seen: </h2>
+	<h3> Genre </h3>	<!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
 
 	  <form action="getCustInfo.php" method="post">
-
         <?php
                 include 'movieList.php';
-        ?>
-
-	 
-	<p> Date </p>	<!-- Search for date entered, make sure to change into certain format. -->
+        ?> 
+	<h3> Date </h3>	<!-- Search for date entered, make sure to change into certain format. -->
 					<!-- Also remmember prompt warning when there is no seats left -->
 
 
@@ -88,7 +73,7 @@
         ?>
         <input type="submit" value="By Title"/>
         </form>
-        
+
 	</div>
 	<br>
 
