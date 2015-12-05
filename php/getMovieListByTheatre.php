@@ -1,6 +1,4 @@
-<----
-
-
+<!--This file returns the listing on theatre room listing and prints a message if theatre rooms are not empty -->
 
 <?php
 
@@ -14,24 +12,15 @@ include 'connectdb.php';
     }
      
 
-    $rowcount = mysqli_num_rows($result);
 
-
-    if($rowcount==0){
-
-
-        PRINT "There is no showing available";
-
-        }
-
-   else{
 
 
     while ($row = mysqli_fetch_assoc($result)) {
 
 
-     echo $row["moviename"]. " - ". $row["year"] . " - " . $row["roomnum"]. "</br>";
-    }
+       echo $row["moviename"]. " - " . $row["year"] . " - " . $row["show_date"] . " - ". $row["show_time"]. " - " .$row["roomnum"]. "</br>";
+
+    
 
 }
     mysqli_free_result($result);
