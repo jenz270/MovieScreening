@@ -20,7 +20,7 @@
 	$customerName = $_POST["customerList"];
 	$movieName = $_POST["movieList"];
 	$rate = $_POST["rating"];
-	if(isset($_POST['rating']) and ($_POST["customerList"] != " ") and ($_POST["movieList"] != " ")){
+	if(isset($_POST['rating']) and ($customerName != " ") and ($customerName!= " ")){
 		$query = "update selected join customer on customer.custID=selected.custID join showing on selected.showID = showing.showID join movie on showing.movieID = movie.movieID set rate ='".$rate. "' where movie.movieID ='" .$movieName. "' and  selected.custID = '".$customerName. "'";
 		$result = mysqli_query($connection,$query);
 		if (!$result) {
@@ -39,7 +39,7 @@
 	?>
 
 	<hr>
-	<form action="customer.php">
+	<form action="getProfile.php">
 		<input type="submit" value="Back to Customer Profile">
 	</form>
 	<hr>
