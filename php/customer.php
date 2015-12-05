@@ -21,11 +21,11 @@
     <h2 class="titles"> Customer Profile </h2>
     <ul>
       <li class="first">
-    <h3> Give a rating to the movie that you've seen: </h3>
+    <h3> Give a rating to the movie that you've seen </h3>
  		<?php
                 include 'getCustList.php';
                 include 'getMovieTitle.php';
-        ?>
+      ?>
 	 <form action="updateRating.php" method="post">
 	<h3> Give a rating to the movie: </h3>
 	<input type="radio" name="rating" value="one">1<br>
