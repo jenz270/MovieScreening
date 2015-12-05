@@ -1,12 +1,10 @@
 <!--Used to let the customer update the rating a movie they have seen-->
 
-?php
+<?php
 
 include 'connectdb.php';
 
 if(isset($_POST['rating'])){
-
-
 $customerName = $_POST["customerList"];
 
 $movieName = $_POST["movieList"];
@@ -34,7 +32,7 @@ if (!$result) {
 
 	else{
 
-        PRINT "Please select a number!";
+        echo "Please select a number!";
 
 }
 

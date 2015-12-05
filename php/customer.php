@@ -15,7 +15,8 @@
 		<h2> Welcome to Jieni and Jaisen's Movie Screening Management System </h2>
 	</header>
 
-	<nr>
+	<hr>
+	<div id="current">
 	<!-- Look at how to display the user's usernsme or name here -->
 	<p> Welcome back, </p>
 
@@ -87,9 +88,8 @@
         ?>
         <input type="submit" value="By Title"/>
         </form>
-
-
-
+        
+	</div>
 	<br>
 
 	<br>

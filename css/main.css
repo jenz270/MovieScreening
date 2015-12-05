@@ -112,6 +112,15 @@ index.php
 /*********************
   customer.php 
  *********************/
+#current{
+	background-color: #ccdddd;
+	border-radius: 50px;
+	padding: 40px;
+	padding-top: 10px;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+}
 
 /*********************
   movieMod.php 
