@@ -1,3 +1,6 @@
+<!--
+   getSelectedShow.php gets the selected show by the staff and stores information about the showing
+-->
 <?php
    include 'connectdb.php';
    $selected_showing = $_POST['theshowings'];

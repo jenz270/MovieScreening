@@ -1,3 +1,6 @@
+<!--
+  updateTheGenres.php updates the genres the staff had modified in the database
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +16,9 @@
         </header>
 <?php
    include 'connectdb.php';
-   $newgenre = $_POST['ggenre'];
+   $newgenre = $_POST['genreList'];
    $movieid = $_POST['movieid'];
+   if (!empty($movieid) and ($_POST["genreList"] != " ")){
    $query = 'update genre set genre="' . $newgenre . '" where movieID=' . $movieid . ";";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
@@ -26,7 +30,11 @@
    } else {
       echo "Error when updating genre: " . mysqli_error($connection);
    }
-   mysqli_close($connection);
+   }
+   else{
+    echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+   }
+      mysqli_close($connection);
 ?>
    <br>
    <form action="movieMod.php">

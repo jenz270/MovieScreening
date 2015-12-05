@@ -1,3 +1,7 @@
+<!--
+  addNewTheatre.php adds the new theatre information entered by the staff into the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +18,9 @@
 
 <?php
    include 'connectdb.php';
-?>
-<?php
    $newRoom= $_POST["roomnumb"];
    $newCap = $_POST["capa"];
+   if (!empty($newMovie) and !empty($movieYear)){
    $query = 'insert into theatre (roomnum,capacity) values('. $newRoom .",". $newCap . ')';
    // echo $query;
    if (!mysqli_query($connection, $query)) {
@@ -25,8 +28,11 @@
     }
    echo "The Theatre is added!";
    mysqli_close($connection);
+ }
+ else{
+    echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
 ?>
-
       <br>
         <hr>
          <form action="movieMod.php">

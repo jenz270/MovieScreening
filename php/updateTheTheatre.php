@@ -1,3 +1,7 @@
+<!-- 
+  updateTheTheatre.php updates the information added by staff onto the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +19,8 @@
    include 'connectdb.php';
    $newcap = $_POST['cap'];
    $roomnumb= $_POST['roomnu'];
+   $theatre= $_POST['theatre'];
+    if (!empty($newcap) and !empty($roomnumb) and ($_POST['theatre'] != " ")){
    $query = 'update theatre set capacity=' . $newcap .' where roomnum=' . $roomnumb . ";";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
@@ -27,6 +33,10 @@
       echo "Error when updating theatre: " . mysqli_error($connection);
    }
    mysqli_close($connection);
+ }
+ else{
+   echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
 ?>
 <br>
    <form action="movieMod.php">

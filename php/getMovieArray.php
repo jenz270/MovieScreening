@@ -1,3 +1,6 @@
+<!-- 
+  getMovieArray.php gets the movies within the movie table, and prints as a radio list
+-->
 <?php
    $query = "select * from movie";
    $result = mysqli_query($connection,$query);

@@ -50,11 +50,12 @@
         <li class="second">
         <h3> Add a movie: </h3>
         <form action="addNewMovie.php" method="post">
-             Movie ID: <input type="number" name="movieid" min="0" max="999"><br>
+             <!-- Movie ID: <input type="number" name="movieid" min="0" max="999"><br> -->
              Movie Title: <input type="text" name="movien"><br>
              Year of Release: <input type="text" name="year"><br>
              Genre: 
              <select name="genreList">
+                    <option value=" "> </option>
                     <option value="Comedy">Comedy</option>
                     <option value="Action">Action</option>
                     <option value="Drama">Drama</option>
@@ -185,6 +186,7 @@
          <form action="addNewGenre.php" method="post">
               Genre: 
               <select name="genreList">
+                    <option value=" "> </option>
                     <option value="Comedy">Comedy</option>
                     <option value="Action">Action</option>
                     <option value="Drama">Drama</option>

@@ -1,3 +1,7 @@
+<!--     
+
+addNewMovie.php adds the movie that is entered by the staff into the database. 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +19,14 @@
            <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
 <?php
-   $newid = $_POST["movieid"];
+  // $newid = $_POST["movieid"];
    $newMovie= $_POST["movien"];
    $movieYear = $_POST["year"];
    $newGenre = $_POST["genreList"];
-   if (empty($newid)){
+   // if (empty($newid)){
+   
+   // add error checking to check that information is entered 
+   if (!empty($newMovie) and !empty($movieYear) and ($_POST["genreList"] != " ")){
    $query1= 'select max(movieID) as maxid from movie';
    $result=mysqli_query($connection,$query1);
     if (!$result) {
@@ -30,14 +37,12 @@
    $movieid = (string)$newkey;
    $query = 'insert into movie (movieID,moviename,year) values (' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
    $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $movieid . ')';
-   }
-   else{
-      $query = 'insert into movie (movieID,moviename,year) values (' . $newid . ',"' . $newMovie . '",' . $movieYear . ')';
-      $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $newid . ')';
+  // }
+  // else{
+    //  $query = 'insert into movie (movieID,moviename,year) values (' . $newid . ',"' . $newMovie . '",' . $movieYear . ')';
+    //  $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $newid . ')';
 
-   }
-   //echo $query;
-   //echo $query2;
+  // }
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
@@ -46,6 +51,10 @@
     }
    echo "Your movie was added!";
    mysqli_close($connection);
+ }
+ else{
+  echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
 ?>
 
  <br>

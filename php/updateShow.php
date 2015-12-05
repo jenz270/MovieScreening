@@ -1,3 +1,7 @@
+<!--
+  updateShow.php allows the staff to enter the updated information 
+-->
+
 <!DOCTYPE html>
 <html>
 <head>

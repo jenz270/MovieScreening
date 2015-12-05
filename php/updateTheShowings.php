@@ -1,3 +1,7 @@
+<!--
+  updateTheShowings.php updates the showings edited by the staff on the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +20,7 @@
    $newdate= $_POST['showdate'];
    $newtime =$_POST['showtime'];
    $showid = $_POST['showid'];
+    if (!empty($newtime) and !empty($newdate) and ($_POST["showid"] != " ")){
    $query = 'update showing set show_date='. "'". $newdate . "'". ', show_time='. "'". $newtime ."' ". 'where showID='. $showid . ";";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
@@ -27,7 +32,11 @@
    } else {
       echo "Error when updating showing: " . mysqli_error($connection);
    }
-   mysqli_close($connection);
+ }
+ else{
+   echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
+    mysqli_close($connection);
 ?>
 
 <br>

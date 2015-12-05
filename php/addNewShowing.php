@@ -1,3 +1,7 @@
+<!--
+  addNewShowing.php adds the new showing into the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,8 @@
    $newDate = $_POST["showdate"];
    $newRoom = $_POST["roomnum"];
    $whichid = $_POST['themovies'];
+   if (!empty($showtime) and !empty($showdate) and !empty(roomnum) and ($_POST["themovies"] != " ")){
+
    $query1= 'select max(showID) as maxid from showing';
    $result=mysqli_query($connection,$query1);
    if (!$result) {
@@ -34,6 +40,10 @@
     }
     echo "<h3>". "The Showing is now added!"."</h3>";
    mysqli_close($connection);
+ }
+ else{
+  echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
 ?>
 
  <br>

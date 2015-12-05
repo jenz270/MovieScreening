@@ -1,3 +1,6 @@
+<!--
+  updateTheMovie.php updates the information that is modified by the staff
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +19,8 @@
    $newyear = $_POST['movyear'];
    $newtitle = $_POST['movititle'];
    $movieid = $_POST['movid'];
+
+   if (!empty($newMovie) and !empty($movieYear) and ($_POST["genreList"] != " ")){
    $query = 'update movie set moviename="' . $newtitle . '", year=' . $newyear . " where movieID='" . $movieid . "';";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
@@ -27,7 +32,11 @@
    } else {
       echo "Error when updating movie: " . mysqli_error($connection);
    }
-   mysqli_close($connection);
+ }
+ else{
+    echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
+    mysqli_close($connection);
 ?>
 <br>
    <form action="movieMod.php">

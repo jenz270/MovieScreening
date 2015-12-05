@@ -1,3 +1,6 @@
+<!--
+   getSelectedGenre.php gets the selected genre from the database, and returns some other information of the genre.
+-->
 <?php
    include 'connectdb.php';
    $selected_genre = $_POST['thegenre'];

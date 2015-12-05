@@ -1,3 +1,6 @@
+<!--
+   getSelectedMovie.php gets the movie that is selected by the staff.
+-->
 <?php
    include 'connectdb.php';
    $selected_movie = $_POST['themovies'];

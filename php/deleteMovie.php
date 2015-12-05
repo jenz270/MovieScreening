@@ -1,3 +1,7 @@
+<!-- 
+  deleteMovie.php deletes the movie selected by the staff from the database
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +36,13 @@
     } //end of deleteMovie function
 
    include 'connectdb.php';
+   if(isset($_POST['themovies'])){
    IsChecked('themovies',$connection);
    mysqli_close($connection);
+ }
+ else{
+   echo "Please make sure to choose an option. Click the button below to go back.";
+  }
 ?>
 
 <hr>

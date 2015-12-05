@@ -1,3 +1,6 @@
+<!--
+  addNewGenre.php adds the new genre entered by the staff onto the database
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +20,7 @@
 <?php
    $genre = $_POST['genreList'];
    $whichid = $_POST['themovies'];
+    if (isset($_POST['themovies']) and ($_POST["genreList"] != " ")){
    $query = 'insert into genre (genre,movieID) values ('. '"'. $genre . '",' . $whichid . ')';
    //echo $query;
    if (!mysqli_query($connection, $query)) {
@@ -24,6 +28,10 @@
     }
    echo "<h3>". "The Genre is now added!"."</h3>";
    mysqli_close($connection);
+ }
+ else{
+  echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
+ }
 ?>
 
  <br>

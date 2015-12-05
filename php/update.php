@@ -1,3 +1,6 @@
+<!--
+  update.php prints fields for the staff to enter the updated information.
+-->
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,3 +1,7 @@
+<!--
+  getShowInfo.php gets the information of all showings
+-->
+
 <?php
    $query = "select * from showing join movie on showing.movieID = movie.movieID";
    $result = mysqli_query($connection,$query);

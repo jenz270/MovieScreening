@@ -1,3 +1,6 @@
+<!--
+  updateTheatre.php allows the staff to enter information to update the theatre selected
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +17,7 @@
 <header>
        <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
-        <h3> Updating Genre </h3>
+        <h3> Updating Theatre </h3>
       <form action="updateTheTheatre.php" method="post">
     Room Number: <input type="text" name="roomnu" value=
       <?php
@@ -34,7 +37,17 @@
         >
   <br>
 
+<input type="hidden" name="theatre" value=
+<?php
+   echo "'";
+   echo $selected_theatre;
+   echo "'";
+?>
+>
+<br>
 <input type="submit" value="Update this Theatre">
+</form>
+
 <br>
    <hr>
       <footer>

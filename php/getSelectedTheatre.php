@@ -1,3 +1,7 @@
+<!--
+   getSelectedTheatre.php gets information of the selected theatre
+-->
+
 <?php
    include 'connectdb.php';
    $selected_theatre = $_POST['thetheatres'];
