@@ -1,14 +1,15 @@
+<!--  Calls methods to allow the customer to view various showing lists as well as their own profile  -->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Screenings Customer</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
-	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
+        <title>Screenings Customer</title>
+         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	 <?php
+         <?php
     include 'connectdb.php';
     ?>
 	<header>
@@ -45,35 +46,28 @@
 	<h3> Date </h3>	<!-- Search for date entered, make sure to change into certain format. -->
 					<!-- Also remmember prompt warning when there is no seats left -->
 
-
-	     <form action="getMovieListByDate.php" method="post">
+        <form action="getMovieListByDate.php" method="post">
   StartDate:
           <input type="date" name="startdate">
   EndDate:
-          <input type="date" name="enddate">
-          <input type="submit" value="Enter">
-          </form>
+          <input type="date" name="enddate" >
+          <input type="submit" value="Enter"/>
+        </form>
+        <p> Theatre </p> <!-- based on theatres that still have seats left -->
 
-
-	<p> Theatre </p> <!-- based on theatres that still have seats left -->
-	
-	 <form action="getMovieListByTheatre.php" method="post">
+        <form action="getMovieListByTheatre.php" method="post">
 
         <input type="submit" value="Availability"/>
         </form>
 
+        <p> Movie Title </p> <!-- Let the user type in input -->
 
-
-
-	<p> Movie Title </p> <!-- Let the user type in input -->
-	
-	   <form action="getMovieListByMovieTitle.php" method="post">
+        <form action="getMovieListByMovieTitle.php" method="post">
         <?php
         include 'getMovieTitle.php';
         ?>
         <input type="submit" value="By Title"/>
         </form>
-
 	</div>
 	<br>
 
@@ -86,3 +80,4 @@
 	?>
 </body>
 </html>
+
