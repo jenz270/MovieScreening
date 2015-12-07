@@ -5,7 +5,7 @@
    include 'connectdb.php';
 
    $cust = $_POST["customerList"];
-   $query = "select * from movie join left join showing on movie.movieID =showing.movieID join selected on showing.showID  = selected.showID where selected.custID='". $cust . "'";
+   $query = "select * from movie join left join showing on movie.movieID =showing.movieID join selected on showing.showID  = selected.showID join customer on customer.custID= selected.custID where customer.custID='". $cust . "'";
    $result = mysqli_query($connection,$query);
    if (!$result) {
         die("databases query failed.");
