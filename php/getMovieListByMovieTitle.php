@@ -7,7 +7,7 @@ include 'connectdb.php';
 <?php
 $movieName = $_POST["movieList"];
 
-$query ='select moviename,year, show_date, show_time, showing.roomnum, capacity, count(selected.custID) as total from movie join showing on movie.movieID = showing.movieID left join selected on selected.showID = showing.showID left join theatre on showing.roomnum = theatre.roomnum where movie.movieID='. $movieName .' group by showing.showID';
+$query ='select moviename,year, show_date, show_time, showing.roomnum, moviepicture, capacity, count(selected.custID) as total from movie join showing on movie.movieID = showing.movieID left join selected on selected.showID = showing.showID left join theatre on showing.roomnum = theatre.roomnum where movie.movieID='. $movieName .' group by showing.showID';
 
 $result = mysqli_query($connection,$query);
 
