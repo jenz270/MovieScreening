@@ -39,12 +39,13 @@ else{
 
 		if($capacity < $total){
 
-     			echo $row["moviename"]. " - " . $row["year"] . " - " . $row["show_date"] . " - ". $row["show_time"]. " - " .$row["roomnum"]. "</br>";
+     			echo $row["moviename"]. " - " . $row["year"] . " - " . $row["show_date"] . " - ". $row["show_time"]. " - " .$row["roomnum"] .'<img src="'. $row["moviepicture"] .'" height="360" width="240">' . "</br>";
 }
 
 		else{
 
-     			echo $row["moviename"]. " - " . $row["year"] . " - " . $row["show_date"] . " - ". $row["show_time"]. " - " .$row["roomnum"]. "   " . "There are no available seats!". "</br>";
+     			PRINT "There are no available seats!";
+			return;
 
 
 }
@@ -55,3 +56,14 @@ else{
 }
 mysqli_free_result($result);
 ?>
+
+<hr>
+         <form action="customer.php">
+          <input type="submit" value="Back to Profile">
+         </form>
+        <hr>
+<footer>
+    &copy; Jieni and Jaisen
+</footer>
+</body>
+</html>

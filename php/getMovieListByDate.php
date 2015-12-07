@@ -59,7 +59,7 @@ else{
 mysqli_close($connection);
 ?>
 <hr>
-<form action="getProfile.php">
+<form action="customer.php">
   <input type="submit" value="Back to Profile">
 </form>
 <hr>

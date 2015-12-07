@@ -72,7 +72,7 @@ else{
 mysqli_free_result($result);
 ?>
 <hr>
-<form action="getProfile.php">
+<form action="customer.php">
   <input type="submit" value="Back to Profile">
 </form>
 <hr>
