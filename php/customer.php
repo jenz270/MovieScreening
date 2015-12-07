@@ -1,4 +1,6 @@
 <!--  Calls methods to allow the customer to view various showing lists as well as their own profile  -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,9 @@
         <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-         <?php
+    
+
+    <?php
     include 'connectdb.php';
     ?>
 	<header>
@@ -25,6 +29,8 @@
     ?>
     <br><input type="submit" name="submit" value="Enter">
     </form>
+
+    
 	<br>
 </div>
     <hr>

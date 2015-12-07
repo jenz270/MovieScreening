@@ -1,5 +1,4 @@
 <!--     
-
 addNewMovie.php adds the movie that is entered by the staff into the database. 
 -->
 <!DOCTYPE html>
@@ -13,17 +12,16 @@ addNewMovie.php adds the movie that is entered by the staff into the database.
 </head>
 <body>
 <?php
+   include 'uploadPicture.php';
    include 'connectdb.php';
 ?>
         <header>
            <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
 <?php
-  // $newid = $_POST["movieid"];
    $newMovie= $_POST["movien"];
    $movieYear = $_POST["year"];
    $newGenre = $_POST["genreList"];
-   // if (empty($newid)){
    
    // add error checking to check that information is entered 
    if (!empty($newMovie) and !empty($movieYear) and ($_POST["genreList"] != " ")){
@@ -35,14 +33,9 @@ addNewMovie.php adds the movie that is entered by the staff into the database.
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $movieid = (string)$newkey;
-   $query = 'insert into movie (movieID,moviename,year) values (' . $movieid . ',"' . $newMovie . '",' . $movieYear . ')';
+   $query = 'insert into movie (movieID,moviename,year,moviepicture) values (' . $movieid . ',"' . $newMovie . '",' . $movieYear . ',"'. $moviepic .'")';
    $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $movieid . ')';
-  // }
-  // else{
-    //  $query = 'insert into movie (movieID,moviename,year) values (' . $newid . ',"' . $newMovie . '",' . $movieYear . ')';
-    //  $query2 = 'insert into genre (genre,movieID) values ('. '"'. $newGenre . '",' . $newid . ')';
 
-  // }
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }

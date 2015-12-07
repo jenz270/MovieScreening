@@ -1,4 +1,8 @@
 <!--  Calls methods to allow the customer to view various showing lists as well as their own profile  -->
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,11 +24,12 @@
     include 'connectdb.php';
     $customer = $_POST["customerList"];
     if (($_POST["customerList"] != " ")){
-       // $query = "select * from customer where custID=". $customer;
+        
+        $query = "select * from customer where custID=".$custNum;
         $result = mysqli_query($connection,$query);
         if(!result){
          die("databases query failed.");
-     }
+         }
      echo "<table align=". '"'. "center". '"'. ">";
      echo "<tr>";
      echo "<th>"."Name". "</th>";
@@ -55,7 +60,7 @@ mysqli_close($connection);
 <form action="updateRating.php" method="post">
     <ul>
       <li class="first">
-        <h3> Give a rating to the movie that you've seen </h3>
+        <h2 class="titles"> Give a rating to the movie that you've seen </h2>
         <?php
         include 'getMovieTitle.php';
         ?>
@@ -71,13 +76,14 @@ mysqli_close($connection);
     </li>
 
     <li class="second">
-        <h3> Genre </h3>    <!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
+        <h2 class="titles"> Available Showings: </h2>
+        <h3> Showings by Genre: </h3>    <!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
 
         <form action="getMovieListByGenre.php" method="post">
             <?php
             include 'movieList.php';
             ?> 
-            <h3> Date </h3> <!-- Search for date entered, make sure to change into certain format. -->
+            <h3> Showings by Date: </h3> <!-- Search for date entered, make sure to change into certain format. -->
             <!-- Also remmember prompt warning when there is no seats left -->
             <form action="getMovieListByDate.php" method="post">
              <h3> StartDate: </h3>
@@ -87,13 +93,13 @@ mysqli_close($connection);
              <input type="submit" value="Enter"/>
          </form>
 
-         <h3> Theatre </h3> <!-- based on theatres that still have seats left -->
+         <h3> Showings by Theatre: </h3> <!-- based on theatres that still have seats left -->
          <form action="getMovieListByTheatre.php" method="post">
 
             <input type="submit" value="Availability"/>
         </form>
 
-        <h3> Movie Title </h3> <!-- Let the user type in input -->
+        <h3> Showings by Movie Title: </h3> <!-- Let the user type in input -->
         <form action="getMovieListByMovieTitle.php" method="post">
             <?php
             include 'getMovieTitle.php';

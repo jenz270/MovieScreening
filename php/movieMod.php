@@ -35,11 +35,13 @@
              echo "<tr>";
              echo "<th>"."Movie". "</th>";
              echo "<th>"."Year"."</th>";
+             echo "<th>"."Poster" ."</th>";
              echo "</tr>";
              while($row = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 echo "<td>".$row["moviename"] . "</td>"; 
                 echo "<td>".$row["year"] . "</td>";
+                echo "<td>".'<img src="'. $row["moviepicture"] .'" height="360" width="240">'. "</td>";
                 echo "</tr>";
              }
              echo"</table>";
@@ -49,7 +51,7 @@
         <ul>
         <li class="second">
         <h3> Add a movie: </h3>
-        <form action="addNewMovie.php" method="post">
+        <form action="addNewMovie.php" method="post" enctype="multipart/form-data">
              <!-- Movie ID: <input type="number" name="movieid" min="0" max="999"><br> -->
              Movie Title: <input type="text" name="movien"><br>
              Year of Release: <input type="text" name="year"><br>
@@ -67,6 +69,7 @@
                     <option value="Documentary">Documentary</option>
               </select>
               <br>
+            Add a poster: <input type="file" name="file" id="file"><br>
         <input type="submit" value="Add New Movie">
         </form>
         </li>

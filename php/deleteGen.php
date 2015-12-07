@@ -19,7 +19,7 @@
 
            if (!empty($_POST[$chkname]))  {
                    foreach($_POST[$chkname] as $value) {
-                           $delsql="delete from genre where movieID='" . $value . "';";
+                           $delsql="delete from genre where movieID='" . $value . 'and genre="'. '";';
                            deleteGenre($delsql,$connection);
                    }
            }

@@ -1,6 +1,7 @@
 <!-- 
   getCustList.php gets the list of customers from the database
 -->
+
 <?php
    include 'connectdb.php';
 

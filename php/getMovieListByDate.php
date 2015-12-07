@@ -37,7 +37,6 @@
         if($rowcount==0){
 
           PRINT "No showings available for this Date Range!";
-          return;
       }
       else{
        while ($row = mysqli_fetch_assoc($result)) {
@@ -60,7 +59,7 @@ else{
 mysqli_close($connection);
 ?>
 <hr>
-<form action="customer.php">
+<form action="getProfile.php">
   <input type="submit" value="Back to Profile">
 </form>
 <hr>
