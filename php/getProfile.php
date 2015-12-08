@@ -26,7 +26,7 @@ session_start();
     $_SESSION['customer'] = $customer;
     if (($_POST["customerList"] != " ")){
         
-        $query = "select * from customer where custID='".$customer ."'";
+        $query = "select name, email, sex, moviename, rate, from customer join selected on customer.custID = selected.custID join showing on selected.showID = showing.showID join movie on movie.movieID = showing.movieID where customer.custID='".$customer ."'";
         $result = mysqli_query($connection,$query);
         if(!result){
          die("databases query failed.");
@@ -42,9 +42,16 @@ session_start();
         echo "<td>".$row["name"] . "</td>"; 
         echo "<td>".$row["email"] . "</td>";
         echo "<td>".$row["sex"]. "</td>";
-        echo "</tr>";
+	echo "\r\n";
+        echo $row["moviename"]. " - " .$row["rate"];
+
+	       
+
+	echo "</tr>";
     }
     echo"</table>";
+
+
     mysqli_free_result($result);
 }
 else{
