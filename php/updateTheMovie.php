@@ -14,13 +14,15 @@
         <header>
                 <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
+        <hr>
+        <br>
 <?php
    include 'connectdb.php';
    $newyear = $_POST['movyear'];
    $newtitle = $_POST['movititle'];
    $movieid = $_POST['movid'];
-
-   if (!empty($newMovie) and !empty($movieYear) and ($_POST["genreList"] != " ")){
+   
+  if(!empty($newyear) and !empty($newtitle)){
    $query = 'update movie set moviename="' . $newtitle . '", year=' . $newyear . " where movieID='" . $movieid . "';";
    //echo $query;   // use this temporarily to see errors
    $result = mysqli_query($connection,$query);
@@ -33,9 +35,9 @@
       echo "Error when updating movie: " . mysqli_error($connection);
    }
  }
- else{
-    echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
- }
+  else{
+    echo "Please key in the correct information to update.";
+  }
     mysqli_close($connection);
 ?>
 <br>

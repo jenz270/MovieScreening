@@ -21,7 +21,7 @@
 
 include 'connectdb.php';
 
-$genre = $_POST["genre"];
+$genre = $_POST["genreList"];
 
 $query =  "select moviename,year, capacity,show_date, show_time,showing.roomnum, count(selected.custID) as total from genre left join movie on genre.movieID = movie.movieID left join showing on movie.movieID = showing.movieID left join selected on selected.showID = showing.showID left join theatre on showing.roomnum = theatre.roomnum where genre.movieID ='" . $genre. "' group by showing.showID"; 
 

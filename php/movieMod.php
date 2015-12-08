@@ -26,7 +26,7 @@
             <h2 class="titles"> Movies </h2>
         <h3> All Movies by year: </h3>
         <?php 
-            $query = "select moviename,year from movie order by year";
+            $query = "select moviename,year, moviepicture from movie order by year";
             $result = mysqli_query($connection,$query);
             if(!result){
                  die("databases query failed.");
@@ -74,12 +74,12 @@
         </form>
         </li>
         <li class="second">
-        <h3> Delete movies: </h3>
+        <h3> Delete a movie: </h3>
         <form action="deleteMovie.php" method="post">
             <?php
              include 'getMovie.php';
             ?>
-        <p><input type="submit" value="Delete Movies"></p>
+        <p><input type="submit" value="Delete Movie"></p>
         </form>
         </li>
         <li class="second">
@@ -124,7 +124,7 @@
         <br>
         <ul>
             <li class="second">
-        <h3> Add Showings: </h3>
+        <h3> Add a Showing: </h3>
         <form action="addNewShowing.php" method="post">
             
              Show Date: <input type="date" name="showdate"><br>
@@ -134,16 +134,16 @@
             <?php
                  include 'getMovieArray.php';
             ?>
-        <input type="submit" value="Add New Movie">
+        <input type="submit" value="Add New Showing">
         </form>
         </li>
         <li class="second">
-        <h3> Delete Showings: </h3>
+        <h3> Delete a Showing: </h3>
         <form action="deleteShow.php" method="post">
             <?php
              include 'getShow.php';
             ?>
-        <p><input type="submit" value="Delete Showings"></p>
+        <p><input type="submit" value="Delete Showing"></p>
         </form>
         </li>
         <li class="second">
@@ -209,12 +209,12 @@
         </form>
         </li> 
         <li class="second">  
-         <h3> Delete Genre: </h3>
+         <h3> Delete a Genre: </h3>
          <form action="deleteGen.php" method="post">
             <?php
              include 'getGen.php';
             ?>
-        <p><input type="submit" value="Delete Showings"></p>
+        <p><input type="submit" value="Delete Genre"></p>
         </form>
        </li>
        <li class="second">

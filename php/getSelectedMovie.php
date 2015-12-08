@@ -12,5 +12,6 @@
    $row = mysqli_fetch_assoc($result);
    $movietitle = $row["moviename"];
    $movieyear = $row["year"];
+   }  
    mysqli_close($connection);
 ?>

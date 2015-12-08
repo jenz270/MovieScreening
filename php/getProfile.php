@@ -23,6 +23,7 @@ session_start();
     <?php 
     include 'connectdb.php';
     $customer = $_POST["customerList"];
+    $_SESSION['customer'] = $customer;
     if (($_POST["customerList"] != " ")){
         
         $query = "select * from customer where custID=".$custNum;
@@ -66,11 +67,11 @@ mysqli_close($connection);
         ?>
         <form action="updateRating.php" method="post">
             <h3> Give a rating to the movie: </h3>
-            <input type="radio" name="rating" value="one">1<br>
-            <input type="radio" name="rating" value="two">2<br>
-            <input type="radio" name="rating" value="three">3<br>
-            <input type="radio" name="rating" value="four">4<br>
-            <input type="radio" name="rating" value="five">5<br>
+            <input type="radio" name="rating" value="1">1<br>
+            <input type="radio" name="rating" value="2">2<br>
+            <input type="radio" name="rating" value="3">3<br>
+            <input type="radio" name="rating" value="4">4<br>
+            <input type="radio" name="rating" value="5">5<br>
             <br><input type="submit" name ="submit" value="rating">
         </form>
     </li>

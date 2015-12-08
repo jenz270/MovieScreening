@@ -10,5 +10,7 @@
         echo $row["movieID"];
         echo '">' . $row["moviename"].', '. $row["genre"]."<br>";
    }
+   $movid = $_POST['movieID'];
+   $genre = $_POST['genre'];
    mysqli_free_result($result);
 ?>

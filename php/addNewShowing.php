@@ -18,12 +18,14 @@
   <header>
                 <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
+        <hr>
+        <br>
 <?php
    $newTime= $_POST["showtime"];
    $newDate = $_POST["showdate"];
    $newRoom = $_POST["roomnum"];
    $whichid = $_POST['themovies'];
-   if (!empty($showtime) and !empty($showdate) and !empty(roomnum) and ($_POST["themovies"] != " ")){
+   if (!empty($newTime) and !empty($newDate) and !empty($newRoom) and isset($_POST['themovies'])){
 
    $query1= 'select max(showID) as maxid from showing';
    $result=mysqli_query($connection,$query1);
@@ -39,11 +41,11 @@
         die("Error: insert failed" . mysqli_error($connection));
     }
     echo "<h3>". "The Showing is now added!"."</h3>";
-   mysqli_close($connection);
  }
  else{
   echo "Please make sure to fill out all fields! Click the button below and make sure to fill all information.";
  }
+  mysqli_close($connection);
 ?>
 
  <br>

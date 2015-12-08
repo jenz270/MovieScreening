@@ -1,4 +1,8 @@
 <!--Used to let the customer update the rating a movie they have seen-->
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +21,11 @@
 	<br>
 	<?php
 	include 'connectdb.php';
-	$customerName = $_POST["customerList"];
+	$customerName = $_SESSION['customer'];
 	$movieName = $_POST["movieList"];
 	$rate = $_POST["rating"];
-	if(isset($_POST['rating']) and ($customerName != " ") and ($customerName!= " ")){
 		$query = "update selected join customer on customer.custID=selected.custID join showing on selected.showID = showing.showID join movie on showing.movieID = movie.movieID set rate ='".$rate. "' where movie.movieID ='" .$movieName. "' and  selected.custID = '".$customerName. "'";
+		echo $query;
 		$result = mysqli_query($connection,$query);
 		if (!$result) {
 			die("Failed to retreive Customer Information");
@@ -31,16 +35,16 @@
 		} else {
 			echo "Failed to update for Customer ";
 		}
-	}
-	else{
-		echo "<h3>" . "Please make sure to fill out all fields! Click the button below and make sure to fill all information." . "</h3>";
-	}
+	//}
+	//else{
+	//	echo "<h3>" . "Please make sure to fill out all fields! Click the button below and make sure to fill all information." . "</h3>";
+	//}
 	mysqli_close($connection);
 	?>
 
 	<hr>
-	<form action="getProfile.php">
-		<input type="submit" value="Back to Customer Profile">
+	<form action="customer.php">
+		<input type="submit" value="Back to Customer">
 	</form>
 	<hr>
 	<footer>

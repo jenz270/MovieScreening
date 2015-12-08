@@ -54,8 +54,5 @@
         <footer>
             &copy; Jieni and Jaisen
         </footer>
-        <?php
-                mysqli_close($connection);
-        ?>
 </body>
 </html>

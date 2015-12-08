@@ -15,11 +15,11 @@
                 <h2> Jieni and Jaisen's Movie Screening Management System </h2>
         </header>
 <?php
-   function IsChecked($chkname,$connection)  {
+   function IsChecked($chkname,$connection, $movID)  {
 
            if (!empty($_POST[$chkname]))  {
                    foreach($_POST[$chkname] as $value) {
-                           $delsql="delete from genre where movieID='" . $value . 'and genre="'. '";';
+                           $delsql='delete from genre where movieID="' .$value . '"and genre="' .$genre . '";';
                            deleteGenre($delsql,$connection);
                    }
            }
@@ -36,7 +36,7 @@
 
    include 'connectdb.php';
    if(isset($_POST['thegenre'])){
-   IsChecked('thegenre',$connection);
+   IsChecked('thegenre',$connection,$movID);
    mysqli_close($connection);
    }
    else{

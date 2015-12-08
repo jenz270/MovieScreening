@@ -20,7 +20,7 @@
    include 'connectdb.php';
    $newRoom= $_POST["roomnumb"];
    $newCap = $_POST["capa"];
-   if (!empty($newMovie) and !empty($movieYear)){
+   if (!empty($newRoom) and !empty($newCap)){
    $query = 'insert into theatre (roomnum,capacity) values('. $newRoom .",". $newCap . ')';
    // echo $query;
    if (!mysqli_query($connection, $query)) {
