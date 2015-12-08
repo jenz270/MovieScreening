@@ -26,7 +26,7 @@ session_start();
     $_SESSION['customer'] = $customer;
     if (($_POST["customerList"] != " ")){
         
-        $query = "select * from customer where custID=".$custNum;
+        $query = "select * from customer where custID='".$customer ."'";
         $result = mysqli_query($connection,$query);
         if(!result){
          die("databases query failed.");
@@ -81,9 +81,20 @@ mysqli_close($connection);
         <h3> Showings by Genre: </h3>    <!-- let the user select from the multiple genres within the data base. Give a warning if there are no seats left for the showing -->
 
         <form action="getMovieListByGenre.php" method="post">
-            <?php
-            include 'movieList.php';
-            ?> 
+            <select name="genreList">
+                    <option value=" "> </option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Documentary">Documentary</option>
+      </select>
+          <input type="submit" value ="genre"/>
+        </form>
             <h3> Showings by Date: </h3> <!-- Search for date entered, make sure to change into certain format. -->
             <!-- Also remmember prompt warning when there is no seats left -->
             <form action="getMovieListByDate.php" method="post">
